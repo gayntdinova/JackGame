@@ -1,0 +1,39 @@
+class QueueItem
+{
+    field Egg egg;
+    field QueueItem next;
+
+    constructor QueueItem new(Egg newEgg)
+    {
+        let egg = newEgg;
+        let next = null;
+        return this;
+    }
+
+    method Egg getEgg() {
+        return egg;
+    }
+
+    method QueueItem getNext() {
+        return next;
+    }
+
+    method void setNext(QueueItem nextItem) {
+        let next = nextItem;
+        return;
+    }
+
+    method void dispose() {
+	    if (~(next = null)) {
+		    do next.dispose();
+		}
+		do egg.dispose();
+	    do Memory.deAlloc(this);
+		return;
+	}
+	
+	method void delete() {
+	    do Memory.deAlloc(this);
+		return;
+	}
+}

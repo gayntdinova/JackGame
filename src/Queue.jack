@@ -1,0 +1,58 @@
+class Queue
+{
+    field QueueItem head;
+    field QueueItem tail;
+    field int length;
+
+    constructor Queue new()
+    {
+        let head = null;
+        let tail = null;
+        return this;
+    }
+
+    method void Enqueue(Egg egg) {
+        var QueueItem item;
+
+        let item = QueueItem.new(egg, head);
+        if (head = null)
+        {
+            let head = item;
+        }
+        else
+        {
+            do tail.setNext(item);
+        }
+        let tail = item;
+		let length = length + 1;
+        return;
+    }
+
+    method Egg Dequeue() {
+        var QueueItem item;
+        var Egg egg;
+
+        if (head = null) 
+        {
+            return null;
+        }
+        let item = head;
+        let egg = item.getEgg();
+        let head = item.getNext();
+        if (head = null)
+        {
+            tail = null;
+        }
+        do item.delete();
+		let length = length - 1;
+        return egg;
+    }
+
+    method void dispose() {
+	    if (~(head = null)) {
+		    do head.dispose();
+		}
+	    do Memory.deAlloc(this);
+		return;
+	}
+}
