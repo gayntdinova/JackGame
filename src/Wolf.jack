@@ -1,4 +1,20 @@
 class Wolf{
+    field int position;
+
+    constructor Wolf new()
+    {
+        let position = 0;
+        return this;
+    }
+
+    method GetPoistion(){
+        return position;
+    }
+
+    method SetPosition(int value){
+        let position = value;
+        return;
+    }
 }
 // волк (верх - лево, верх - право, низ-лево, низ-право)
 // по умолчанию - волк прямо (либо в любом другом из положений написанных сверху)
