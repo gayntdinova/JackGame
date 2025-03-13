@@ -1,7 +1,6 @@
 class Queue
 {
-    field QueueItem head;
-    field QueueItem tail;
+    field QueueItem head, tail;
     field int length;
 
     constructor Queue new()
@@ -11,7 +10,8 @@ class Queue
         return this;
     }
 
-    method void Enqueue(Egg egg) {
+    method void enqueue(Egg egg)
+    {
         var QueueItem item;
 
         let item = QueueItem.new(egg, head);
@@ -28,7 +28,8 @@ class Queue
         return;
     }
 
-    method Egg Dequeue() {
+    method Egg dequeue()
+    {
         var QueueItem item;
         var Egg egg;
 
@@ -48,8 +49,20 @@ class Queue
         return egg;
     }
 
-    method void dispose() {
-	    if (~(head = null)) {
+    method QueueItem getTail()
+    {
+        return tail;
+    }
+
+    method QueueItem length()
+    {
+        return length;
+    }
+
+    method void dispose()
+    {
+	    if (~(head = null))
+        {
 		    do head.dispose();
 		}
 	    do Memory.deAlloc(this);

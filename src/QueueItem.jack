@@ -10,21 +10,26 @@ class QueueItem
         return this;
     }
 
-    method Egg getEgg() {
+    method Egg getEgg()
+    {
         return egg;
     }
 
-    method QueueItem getNext() {
+    method QueueItem getNext()
+    {
         return next;
     }
 
-    method void setNext(QueueItem nextItem) {
+    method void setNext(QueueItem nextItem)
+    {
         let next = nextItem;
         return;
     }
 
-    method void dispose() {
-	    if (~(next = null)) {
+    method void dispose()
+    {
+	    if (~(next = null))
+        {
 		    do next.dispose();
 		}
 		do egg.dispose();
@@ -32,7 +37,8 @@ class QueueItem
 		return;
 	}
 	
-	method void delete() {
+	method void delete()
+    {
 	    do Memory.deAlloc(this);
 		return;
 	}
