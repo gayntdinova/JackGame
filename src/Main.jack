@@ -1,4 +1,7 @@
 class Main {
-
+    method void Main()
+    {
+        return;
+    }
 }
 // запускаем игру

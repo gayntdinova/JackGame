@@ -1,4 +1,10 @@
 class Random{
+    constructor Random new(){
+        return this;
+    }
+    method int rand(){
+        return 0;
+    }
 }
 // рандомная генерация откуда падает яйцо
 // Егор

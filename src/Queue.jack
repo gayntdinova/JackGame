@@ -14,7 +14,7 @@ class Queue
     {
         var QueueItem item;
 
-        let item = QueueItem.new(egg, head);
+        let item = QueueItem.new(egg);
         if (head = null)
         {
             let head = item;
@@ -42,7 +42,7 @@ class Queue
         let head = item.getNext();
         if (head = null)
         {
-            tail = null;
+            let tail = null;
         }
         do item.delete();
 		let length = length - 1;

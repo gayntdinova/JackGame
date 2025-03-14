@@ -1,4 +1,20 @@
 class Egg{
+
+    constructor Egg new(int g){
+        return this;
+    }
+    method boolean doSmth(){
+        return false;
+    }
+    method void dispose(){
+        return;
+    }
+    method int getPosition(){
+        return false;
+    }
+    method int getStage(){
+        return 0;
+    }
 }
 // у яйца 5 положений во время падения с полки из курятника
 // поле какая фаза падения

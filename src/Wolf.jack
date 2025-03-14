@@ -7,12 +7,18 @@ class Wolf{
         return this;
     }
 
-    method GetPoistion(){
+    method int GetPoistion(){
         return position;
     }
 
-    method SetPosition(int value){
+    method void SetPosition(int value){
         let position = value;
+        return;
+    }
+    method void Draw(){
+        return;
+    }
+    method void dispose(){
         return;
     }
 }

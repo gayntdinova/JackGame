@@ -2,21 +2,21 @@ class Game
 {
     field Wolf wolf;
     field int score, eggDelay, eggDelayCounter;
-    field bool isOver;
+    field boolean isOver;
 
-    field Queue eggsGroupOne, eggsGroupTwo, eggsGroupThree, eggsGroupFour;
+    field Queue eggsGroup;
+
+    field Array GroupsTails;
 
     constructor Game new()
     {
-        let wolf = wolf.new();
+        let wolf = Wolf.new();
         let score = 0;
         let eggDelay = 10;
         let eggDelayCounter = 0;
         let isOver = false;
-        let eggsGroupOne = Queue.new();
-        let eggsGroupTwo = Queue.new();
-        let eggsGroupThree = Queue.new();
-        let eggsGroupFour = Queue.new();
+        let eggsGroup = Queue.new();
+        let GroupsTails = Array.new(4);
         return this;
     }
 
@@ -41,12 +41,10 @@ class Game
             if (key = 132){ let position = 4;}
 
             do wolf.SetPosition(position);
+            do wolf.Draw();//изменится, поменять /todo
 
             //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
-            do this.goThrewEggGroup(eggsGroupOne,1);
-            do this.goThrewEggGroup(eggsGroupTwo,2);
-            do this.goThrewEggGroup(eggsGroupThree,3);
-            do this.goThrewEggGroup(eggsGroupFour,4);
+            do goThrewEggs();
 
             //ускоряю игру, если скор стал больше 5, то яйцо спавнится каждые 7 итераций и тд, можно переместить метод в прохождение по яйцам /todo
             if (score > 5){let eggDelay = 7;}
@@ -55,105 +53,7 @@ class Game
             if (eggDelayCounter = eggDelay)
             {
                 let eggDelayCounter = 0;
-
-                var Random random;
-                let random = random.new();
-                var int rand;
-
-                //тут в теории получаем число от 1 до 4, типо куда кидать
-                let rand = random.rand();//надо /todo
-
-                var bool label;
-                let label = true;
-
-                //идём по всем местам, для спавная яиц от рандомного пока не находим где нет в начале яйца, далее кидаем туда яйцо
-                while (label)
-                {
-                    if (rand == 1)
-                    {
-                        if ((eggsGroupOne.getTail() = null))
-                        {
-                            var Egg newEgg;
-                            let newEgg = newEgg.new(1);
-                            do eggsGroupOne.enqueue(newEgg);
-                            let label = false;
-                        }
-                        else
-                        {
-                            if (~(eggsGroupOne.getTail().getEgg().getStage() = 0))//название метода и не уверен можно ли несколько методов так вызывать
-                            {
-                                var Egg newEgg;
-                                let newEgg = newEgg.new(1);
-                                do eggsGroupOne.enqueue(newEgg);
-                                let label = false;
-                            }
-                            else{let rand = 2;}
-                        }
-                    }
-                    if (rand == 2)
-                    {
-                        if ((eggsGroupTwo.getTail() = null))
-                        {
-                            var Egg newEgg;
-                            let newEgg = newEgg.new(1);
-                            do eggsGroupTwo.enqueue(newEgg);
-                            let label = false;
-                        }
-                        else
-                        {
-                            if (~(eggsGroupTwo.getTail().getEgg().getStage() = 0))//название метода и не уверен можно ли несколько методов так вызывать
-                            {
-                                var Egg newEgg;
-                                let newEgg = newEgg.new(2);
-                                do eggsGroupTwo.enqueue(newEgg);
-                                let label = false;
-                            }
-                            else{let rand = 3;}
-                        }
-                    }
-                    if (rand == 3)
-                    {
-                        if ((eggsGroupThree.getTail() = null))
-                        {
-                            var Egg newEgg;
-                            let newEgg = newEgg.new(1);
-                            do eggsGroupThree.enqueue(newEgg);
-                            let label = false;
-                        }
-                        else
-                        {
-                            if (~(eggsGroupThree.getTail().getEgg().getStage() = 0))//название метода и не уверен можно ли несколько методов так вызывать
-                            {
-                                var Egg newEgg;
-                                let newEgg = newEgg.new(3);
-                                do eggsGroupThree.enqueue(newEgg);
-                                let label = false;
-                            }
-                            else{let rand = 4;}
-                        }
-                    }
-                    if (rand == 4)
-                    {
-                        if ((eggsGroupFour.getTail() = null))
-                        {
-                            var Egg newEgg;
-                            let newEgg = newEgg.new(1);
-                            do eggsGroupFour.enqueue(newEgg);
-                            let label = false;
-                        }
-                        else
-                        {
-                            if (~(eggsGroupFour.getTail().getEgg().getStage() = 0))//название метода и не уверен можно ли несколько методов так вызывать
-                            {
-                                var Egg newEgg;
-                                let newEgg = newEgg.new(4);
-                                do eggsGroupFour.enqueue(newEgg);
-                                let label = false;
-                            }
-                            else{let rand = 1;}
-                        }
-                    }
-                }
+                do throwEgg();
             }
             else{let eggDelayCounter = eggDelayCounter + 1;}
         }
@@ -164,10 +64,10 @@ class Game
         return;
     }
 
-    method void goThrewEggGroup(Queue eggsGroup,int dir)
+    method void goThrewEggs()
     {
         var QueueItem item;
-        var bool fell;
+        var boolean fell;
         var Egg egg;
 
         let fell = false;
@@ -178,29 +78,65 @@ class Game
             let egg = item.getEgg();
             let fell = egg.doSmth();//доделать когда появится яйцо /todo
             let item = item.getNext();
-        {
+        }
 
         if (fell)
         {
-            do eggsGroup.dequeue();
-            if (~(wolf.GetPoistion() = dir)){let isOver = true;}//так надеюсь можно неравенства смотреть?
+            let egg = eggsGroup.dequeue();
+            if (~(wolf.GetPoistion() = egg.getPosition())){let isOver = true;}//так надеюсь можно неравенства смотреть?
             else{let score = score + 1;}
         }
         return;
     }
 
+    method void throwEgg()
+    {
+        var Random random;
+        var int groupNumber;
+        var boolean label;
+
+        let random = Random.new();
+        //тут в теории получаем число от 0 до 3, типо куда кидать
+        let groupNumber = random.rand();//надо /todo
+
+        let label = false;
+
+        //идём по всем местам, для спавная яиц от рандомного пока не находим где нет в начале яйца, далее кидаем туда яйцо
+        while (~label)
+        {
+            let label = tryPush(groupNumber);
+            let groupNumber = groupNumber + 1 - ((groupNumber + 1) / 4);
+        }
+        return;
+    }
+
+    method boolean tryPush(int groupNumber)//если не может кинуть в выбранное место яйцо, возвращает false иначе true и кидает его
+    {
+        var Egg newEgg; 
+        var Egg tailEgg;
+
+        let tailEgg = GroupsTails[groupNumber];
+
+        if (tailEgg = null){return false;}
+        if(tailEgg.getStage() = 0){return false;} 
+
+        let newEgg = Egg.new(groupNumber);
+        let GroupsTails[groupNumber] = newEgg;
+        do eggsGroup.enqueue(newEgg);
+
+        return true;
+    }
+
     method void drawBackground()
     {
         //нарисовать фон /todo
+        return;
     }
 
     method void dispose()
     {
         do wolf.dispose();
-        do eggsGroupOne.dispose();
-        do eggsGroupTwo.dispose();
-        do eggsGroupThree.dispose();
-        do eggsGroupFour.dispose();
+        do eggsGroup.dispose();
 
         do Memory.deAlloc(this);
 		return;
@@ -209,7 +145,7 @@ class Game
 //umpalumpa123
 // инициализация объектов - волк, яйца. Игровое взаимодействие.
 // игра бексонечная, сверху счет
-// если фаза у яйца 6, то проверяем волк словит или нет
+// если фаза у яйца 6, то проверяем волк словит или нет \/
 // поле проиграл ли игрок - game over \/
 // поле список яиц \/
 // Тим
