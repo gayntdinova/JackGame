@@ -11,9 +11,11 @@ class Egg{
     }
     method int getPosition(){
         return false;
+        // 1 - верх-лево, 2- верх-право, 3- низ-лево, 4- низ-право
     }
     method int getStage(){
         return 0;
+        // 5 фаз падения
     }
 }
 // у яйца 5 положений во время падения с полки из курятника

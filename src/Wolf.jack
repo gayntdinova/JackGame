@@ -16,9 +16,33 @@ class Wolf{
         return;
     }
     method void Draw(){
+        if position = 1{
+            DrawUpLeft();
+        }
+        if position = 2{
+            DrawUpRight();
+        }
+        if position = 3{
+            DrawDownLeft();
+        }
+        if position = 4{
+            DrawDownRight();
+        }
         return;
     }
     method void dispose(){
+        return;
+    }
+    method void DrawUpLeft(){
+        return;
+    }
+    method void DrawUpRight(){
+        return;
+    }
+    method void DrawDownLeft(){
+        return;
+    }
+    method void DrawDownRight(){
         return;
     }
 }
