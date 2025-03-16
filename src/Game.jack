@@ -72,7 +72,7 @@ class Game
         var Egg egg;
 
         let fell = false;
-        let item = eggsGroup.getTail(); 
+        let item = eggsGroup.getTail();
 
         while (~(item = null))
         {
@@ -84,7 +84,7 @@ class Game
         if (fell)
         {
             let egg = eggsGroup.dequeue();
-            if (~(wolf.GetPoistion() = egg.getPosition())){let isOver = true;}
+            if (~(wolf.GetPosition() = egg.getPosition())){let isOver = true;}
             else
             {
                 let score = score + 1;
@@ -115,13 +115,13 @@ class Game
 
     method boolean tryPush(int groupNumber)//если не может кинуть в выбранное место яйцо, возвращает false иначе true и кидает его
     {
-        var Egg newEgg; 
+        var Egg newEgg;
         var Egg tailEgg;
 
         let tailEgg = GroupsTails[groupNumber];
 
         if (tailEgg = null){return false;}
-        if(tailEgg.getStage() = 0){return false;} 
+        if(tailEgg.getStage() = 0){return false;}
 
         let newEgg = Egg.new(groupNumber);
         let GroupsTails[groupNumber] = newEgg;
@@ -145,7 +145,7 @@ class Game
         let position = 0;
         let counter = score;
 
-        while(~(score = 0)) 
+        while(~(score = 0))
         {
             let ost = counter - (counter / 10);
             do drawNumber(ost);

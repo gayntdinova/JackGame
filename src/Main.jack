@@ -1,5 +1,5 @@
 class Main {
-    method void Main()
+    method void main()
     {
         var Game game;
         let game = Game.new();
