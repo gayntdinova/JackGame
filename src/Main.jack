@@ -2,7 +2,7 @@ class Main {
     method void Main()
     {
         var Game game;
-        let game = Game.new()
+        let game = Game.new();
         do game.run();
         return;
     }

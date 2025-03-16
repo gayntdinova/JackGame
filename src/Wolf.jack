@@ -16,17 +16,17 @@ class Wolf{
         return;
     }
     method void Draw(){
-        if position = 1{
-            DrawUpLeft();
+        if (position = 1){
+            do DrawUpLeft();
         }
-        if position = 2{
-            DrawUpRight();
+        if (position = 2){
+            do DrawUpRight();
         }
-        if position = 3{
-            DrawDownLeft();
+        if (position = 3){
+            do DrawDownLeft();
         }
-        if position = 4{
-            DrawDownRight();
+        if (position = 4){
+            do DrawDownRight();
         }
         return;
     }

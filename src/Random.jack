@@ -1,9 +1,18 @@
 class Random{
+    field int defaultValue, upperLimit, generalValue, noise;
+
     constructor Random new(){
+        let defaultValue = 61;
+        let upperLimit = 401;
+        let generalValue = 0;
+        let noise = 21;
         return this;
     }
     method int rand(){
-        return 0;
+        var int next;
+        let next = generalValue * defaultValue + noise + Keyboard.keyPressed();
+        let generalValue = next - ((next / upperLimit) * upperLimit);
+        return generalValue - ((generalValue / 4) * 4);
     }
 }
 // рандомная генерация откуда падает яйцо
