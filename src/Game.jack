@@ -3,6 +3,7 @@ class Game
     field Wolf wolf;
     field int score, eggDelay, eggDelayCounter;
     field boolean isOver;
+    field Random random;
 
     field Queue eggsGroup;
 
@@ -15,6 +16,7 @@ class Game
         let eggDelay = 10;
         let eggDelayCounter = 0;
         let isOver = false;
+        let random = Random.new();
         let eggsGroup = Queue.new();
         let GroupsTails = Array.new(4);
         return this;
@@ -94,11 +96,9 @@ class Game
 
     method void throwEgg()
     {
-        var Random random;
         var int groupNumber;
         var boolean label;
 
-        let random = Random.new();
         //тут в теории получаем число от 0 до 3, типо куда кидать
         let groupNumber = random.rand();//надо /todo
 
