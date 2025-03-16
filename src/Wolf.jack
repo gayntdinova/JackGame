@@ -1,53 +1,60 @@
-class Wolf{
+class Wolf {
     field int position;
 
-    constructor Wolf new()
-    {
-        let position = 0;
+    constructor Wolf new() {
+        let position = 1;
+        do Draw();
         return this;
     }
 
-    method int GetPoistion(){
+    method int GetPosition() {
         return position;
     }
 
-    method void SetPosition(int value){
+    method void SetPosition(int value) {
         let position = value;
         return;
     }
-    method void Draw(){
-        if (position = 1){
+
+    method void Draw() {
+		do Screen.clearScreen();//убрать потом
+        if (position = 1) {
             do DrawUpLeft();
         }
-        if (position = 2){
+        if (position = 2) {
             do DrawUpRight();
         }
-        if (position = 3){
+        if (position = 3) {
             do DrawDownLeft();
         }
-        if (position = 4){
+        if (position = 4) {
             do DrawDownRight();
         }
         return;
     }
-    method void dispose(){
+
+    method void dispose() {
+        do Memory.deAlloc(this);
         return;
     }
-    method void DrawUpLeft(){
+
+    method void DrawUpLeft() {
+        do graphics.drawWolfUpLeft(3501);
         return;
     }
-    method void DrawUpRight(){
+
+    method void DrawUpRight() {
+        do graphics.drawWolfUpRight(3501);
         return;
     }
-    method void DrawDownLeft(){
+
+    method void DrawDownLeft() {
+        do graphics.drawWolfDownLeft(3501);
         return;
     }
-    method void DrawDownRight(){
+
+    method void DrawDownRight() {
+        do graphics.drawWolfDownRight(3501);
         return;
     }
 }
-// волк (верх - лево, верх - право, низ-лево, низ-право)
-// по умолчанию - волк прямо (либо в любом другом из положений написанных сверху)
-// поле позиция волка
-// Ира
-//new comment
