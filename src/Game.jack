@@ -13,8 +13,8 @@ class Game
     {
         let wolf = Wolf.new();
         let score = 0;
-        let eggDelay = 7;
-        let eggDelayCounter = 0;
+        let eggDelay = 15;
+        let eggDelayCounter = eggDelay;
         let isOver = false;
         let random = Random.new();
         let eggsGroup = Queue.new();
@@ -50,12 +50,13 @@ class Game
             do goThrewEggs();
 
             //ускоряю игру, если скор стал больше 5, то яйцо спавнится каждые 7 итераций и тд, можно переместить метод в прохождение по яйцам /todo
-            if (score > 15){let eggDelay = 5;}
-            if (score > 26){let eggDelay = 1;}
+            if (score > 10){let eggDelay = 13;}
+            if (score > 19){let eggDelay = 9;}
+            if (score > 26){let eggDelay = 2;}
 
-            if (eggDelayCounter = eggDelay)
+            if (eggDelayCounter - ((eggDelayCounter/eggDelay)*eggDelay) = 0)
             {
-                let eggDelayCounter = 0;
+                let eggDelayCounter = 1;
                 do throwEgg();
             }
             else{let eggDelayCounter = eggDelayCounter + 1;}

@@ -6,9 +6,9 @@ function Game.new 0
     pop this 0
     push constant 0
     pop this 1
-    push constant 7
+    push constant 15
     pop this 2
-    push constant 0
+    push this 2
     pop this 3
     push constant 0
     pop this 4
@@ -81,7 +81,7 @@ label Game_8
     push this 0
     call Wolf.Draw 1
     pop temp 0
-    push constant 200
+    push constant 250
     call Sys.wait 1
     pop temp 0
     push pointer 0
@@ -92,7 +92,7 @@ label Game_8
     gt
     not
     if-goto Game_11
-    push constant 5
+    push constant 9
     pop this 2
     goto Game_10
 label Game_11
@@ -102,17 +102,23 @@ label Game_10
     gt
     not
     if-goto Game_13
-    push constant 1
+    push constant 2
     pop this 2
     goto Game_12
 label Game_13
 label Game_12
     push this 3
+    push this 3
     push this 2
+    call Math.divide 2
+    push this 2
+    call Math.multiply 2
+    sub
+    push constant 0
     eq
     not
     if-goto Game_15
-    push constant 0
+    push constant 1
     pop this 3
     push pointer 0
     call Game.throwEgg 1
