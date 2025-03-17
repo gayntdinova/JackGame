@@ -1,0 +1,100 @@
+function Wolf.new 0
+    push constant 1
+    call Memory.alloc 1
+    pop pointer 0
+    push constant 1
+    pop this 0
+    push pointer 0
+    call Wolf.Draw 1
+    pop temp 0
+    push pointer 0
+    return
+function Wolf.GetPosition 0
+    push argument 0
+    pop pointer 0
+    push this 0
+    return
+function Wolf.SetPosition 0
+    push argument 0
+    pop pointer 0
+    push argument 1
+    pop this 0
+    push constant 0
+    return
+function Wolf.Draw 0
+    push argument 0
+    pop pointer 0
+    push this 0
+    push constant 1
+    eq
+    not
+    if-goto Wolf_1
+    goto Wolf_0
+label Wolf_1
+label Wolf_0
+    push this 0
+    push constant 2
+    eq
+    not
+    if-goto Wolf_3
+    goto Wolf_2
+label Wolf_3
+label Wolf_2
+    push this 0
+    push constant 3
+    eq
+    not
+    if-goto Wolf_5
+    goto Wolf_4
+label Wolf_5
+label Wolf_4
+    push this 0
+    push constant 4
+    eq
+    not
+    if-goto Wolf_7
+    goto Wolf_6
+label Wolf_7
+label Wolf_6
+    push constant 0
+    return
+function Wolf.dispose 0
+    push argument 0
+    pop pointer 0
+    push pointer 0
+    call Memory.deAlloc 1
+    pop temp 0
+    push constant 0
+    return
+function Wolf.DrawUpLeft 0
+    push argument 0
+    pop pointer 0
+    push constant 3501
+    call graphics.drawWolfUpLeft 1
+    pop temp 0
+    push constant 0
+    return
+function Wolf.DrawUpRight 0
+    push argument 0
+    pop pointer 0
+    push constant 3501
+    call graphics.drawWolfUpRight 1
+    pop temp 0
+    push constant 0
+    return
+function Wolf.DrawDownLeft 0
+    push argument 0
+    pop pointer 0
+    push constant 3501
+    call graphics.drawWolfDownLeft 1
+    pop temp 0
+    push constant 0
+    return
+function Wolf.DrawDownRight 0
+    push argument 0
+    pop pointer 0
+    push constant 3501
+    call graphics.drawWolfDownRight 1
+    pop temp 0
+    push constant 0
+    return

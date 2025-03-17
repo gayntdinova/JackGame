@@ -6,17 +6,25 @@ class Egg
         let initialPosition = g;
         let screenPosition = 0;
         let iterations = 0;
-        do doSmth();
+        do Screen.setColor(true);
+        do draw();
         return this;
     }
     method boolean changeScreenPosition(){
         let iterations = iterations + 1;
         if (iterations - ((iterations / 4) * 4) = 0)
         {
+            do Screen.setColor(false);
+            do draw();
             let screenPosition = screenPosition + 1;
+            do Screen.setColor(true);
+            do draw();
         }
-
         return screenPosition = 6;
+    }
+    method void draw(){
+        do Screen.drawRectangle(initialPosition*10,screenPosition*10,initialPosition*10 + 10, screenPosition*10 + 10 );
+        return;
     }
     method void dispose(){
         return;

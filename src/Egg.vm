@@ -1,0 +1,99 @@
+function Egg.new 0
+    push constant 3
+    call Memory.alloc 1
+    pop pointer 0
+    push argument 0
+    pop this 0
+    push constant 0
+    pop this 1
+    push constant 0
+    pop this 2
+    push constant 1
+    neg
+    call Screen.setColor 1
+    pop temp 0
+    push pointer 0
+    call Egg.draw 1
+    pop temp 0
+    push pointer 0
+    return
+function Egg.changeScreenPosition 0
+    push argument 0
+    pop pointer 0
+    push this 2
+    push constant 1
+    add
+    pop this 2
+    push this 2
+    push this 2
+    push constant 4
+    call Math.divide 2
+    push constant 4
+    call Math.multiply 2
+    sub
+    push constant 0
+    eq
+    not
+    if-goto Egg_1
+    push constant 0
+    call Screen.setColor 1
+    pop temp 0
+    push pointer 0
+    call Egg.draw 1
+    pop temp 0
+    push this 1
+    push constant 1
+    add
+    pop this 1
+    push constant 1
+    neg
+    call Screen.setColor 1
+    pop temp 0
+    push pointer 0
+    call Egg.draw 1
+    pop temp 0
+    goto Egg_0
+label Egg_1
+label Egg_0
+    push this 1
+    push constant 6
+    eq
+    return
+function Egg.draw 0
+    push argument 0
+    pop pointer 0
+    push this 0
+    push constant 10
+    call Math.multiply 2
+    push this 1
+    push constant 10
+    call Math.multiply 2
+    push this 0
+    push constant 10
+    call Math.multiply 2
+    push constant 10
+    add
+    push this 1
+    push constant 10
+    call Math.multiply 2
+    push constant 10
+    add
+    call Screen.drawRectangle 4
+    pop temp 0
+    push constant 0
+    return
+function Egg.dispose 0
+    push argument 0
+    pop pointer 0
+    push constant 0
+    return
+function Egg.getPosition 0
+    push argument 0
+    pop pointer 0
+    push this 0
+    return
+function Egg.getStage 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    return

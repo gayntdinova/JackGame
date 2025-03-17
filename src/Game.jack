@@ -13,7 +13,7 @@ class Game
     {
         let wolf = Wolf.new();
         let score = 0;
-        let eggDelay = 10;
+        let eggDelay = 7;
         let eggDelayCounter = 0;
         let isOver = false;
         let random = Random.new();
@@ -32,7 +32,6 @@ class Game
         while (~isOver)
         {
             //ожидаю какое то время
-            do Sys.wait(15);
 
             let key = Keyboard.keyPressed();
 
@@ -45,12 +44,14 @@ class Game
             do wolf.SetPosition(position);
             do wolf.Draw();//изменится, поменять /todo
 
+            do Sys.wait(200);
+
             //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
             do goThrewEggs();
 
             //ускоряю игру, если скор стал больше 5, то яйцо спавнится каждые 7 итераций и тд, можно переместить метод в прохождение по яйцам /todo
-            if (score > 5){let eggDelay = 7;}
-            if (score > 10){let eggDelay = 5;}
+            if (score > 15){let eggDelay = 5;}
+            if (score > 26){let eggDelay = 1;}
 
             if (eggDelayCounter = eggDelay)
             {
@@ -68,20 +69,21 @@ class Game
     method void goThrewEggs()
     {
         var QueueItem item;
-        var boolean fell;
+        var boolean fell,label;
         var Egg egg;
 
-        let fell = false;
+        let label = false;
         let item = eggsGroup.getTail();
 
         while (~(item = null))
         {
             let egg = item.getEgg();
             let fell = egg.changeScreenPosition();//доделать когда появится яйцо /todo
+            if (fell){let label = true;}
             let item = item.getNext();
         }
 
-        if (fell)
+        if (label)
         {
             let egg = eggsGroup.dequeue();
             if (~(wolf.GetPosition() = egg.getPosition())){let isOver = true;}
@@ -109,7 +111,7 @@ class Game
         while (~label)
         {
             let label = tryPush(groupNumber);
-            let groupNumber = groupNumber + 1 - ((groupNumber + 1) / 4);
+            let groupNumber = groupNumber + 1 - ((groupNumber + 1) / 4) * 4;
         }
         return;
     }
@@ -121,9 +123,10 @@ class Game
 
         let tailEgg = GroupsTails[groupNumber];
 
-        if (tailEgg = null){return false;}
-        if(tailEgg.getStage() = 0){return false;}
-
+        if (~(tailEgg = null))
+        {
+            if(tailEgg.getStage() = 0){return false;}
+        }
         let newEgg = Egg.new(groupNumber);
         let GroupsTails[groupNumber] = newEgg;
         do eggsGroup.enqueue(newEgg);

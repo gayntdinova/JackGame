@@ -17,18 +17,18 @@ class Wolf {
     }
 
     method void Draw() {
-		do Screen.clearScreen();//убрать потом
+		//do Screen.clearScreen();//убрать потом
         if (position = 1) {
-            do DrawUpLeft();
+            //do DrawUpLeft();
         }
         if (position = 2) {
-            do DrawUpRight();
+            //do DrawUpRight();
         }
         if (position = 3) {
-            do DrawDownLeft();
+            //do DrawDownLeft();
         }
         if (position = 4) {
-            do DrawDownRight();
+            //do DrawDownRight();
         }
         return;
     }
