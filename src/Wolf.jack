@@ -41,22 +41,22 @@ class Wolf {
     }
 
     method void DrawUpLeft() {
-        do graphics.drawWolfUpLeft(106 * 32 + 3);
+        do graphics.drawWolfUpLeft(106 * 32 + 6);
         return;
     }
 
     method void DrawUpRight() {
-        do graphics.drawWolfUpRight(106 * 32 + 10);
+        do graphics.drawWolfUpRight(106 * 32 + 14);
         return;
     }
 
     method void DrawDownLeft() {
-        do graphics.drawWolfDownLeft(106 * 32 + 3);
+        do graphics.drawWolfDownLeft(106 * 32 + 6);
         return;
     }
 
     method void DrawDownRight() {
-        do graphics.drawWolfDownRight(106 * 32 + 10);
+        do graphics.drawWolfDownRight(106 * 32 + 14);
         return;
     }
 }
