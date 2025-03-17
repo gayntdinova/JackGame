@@ -1,6 +1,11 @@
-class Egg{
+class Egg
+{
+    field int initialPosition, screenPosition;
 
     constructor Egg new(int g){
+        let initialPosition = g;
+        let screenPosition = 0;
+        do doSmth();
         return this;
     }
     method boolean doSmth(){
@@ -10,11 +15,11 @@ class Egg{
         return;
     }
     method int getPosition(){
-        return false;
+        return initialPosition;
         // 1 - верх-лево, 2- верх-право, 3- низ-лево, 4- низ-право
     }
     method int getStage(){
-        return 0;
+        return screenPosition;
         // 5 фаз падения
     }
 }

@@ -1,4 +1,5 @@
-class Random{
+class Random
+{
     field int defaultValue, upperLimit, generalValue, noise;
 
     constructor Random new(){
