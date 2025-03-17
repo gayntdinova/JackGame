@@ -1,0 +1,41 @@
+function Random.new 0
+    push constant 4
+    call Memory.alloc 1
+    pop pointer 0
+    push constant 61
+    pop this 0
+    push constant 401
+    pop this 1
+    push constant 0
+    pop this 2
+    push constant 21
+    pop this 3
+    push pointer 0
+    return
+function Random.rand 1
+    push argument 0
+    pop pointer 0
+    push this 2
+    push this 0
+    call Math.multiply 2
+    push this 3
+    add
+    call Keyboard.keyPressed 0
+    add
+    pop local 0
+    push local 0
+    push local 0
+    push this 1
+    call Math.divide 2
+    push this 1
+    call Math.multiply 2
+    sub
+    pop this 2
+    push this 2
+    push this 2
+    push constant 4
+    call Math.divide 2
+    push constant 4
+    call Math.multiply 2
+    sub
+    return

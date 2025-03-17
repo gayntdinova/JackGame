@@ -1,0 +1,58 @@
+function QueueItem.new 0
+    push constant 2
+    call Memory.alloc 1
+    pop pointer 0
+    push argument 0
+    pop this 0
+    push constant 0
+    pop this 1
+    push pointer 0
+    return
+function QueueItem.getEgg 0
+    push argument 0
+    pop pointer 0
+    push this 0
+    return
+function QueueItem.getNext 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    return
+function QueueItem.setNext 0
+    push argument 0
+    pop pointer 0
+    push argument 1
+    pop this 1
+    push constant 0
+    return
+function QueueItem.dispose 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    push constant 0
+    eq
+    not
+    not
+    if-goto QueueItem_1
+    push this 1
+    call QueueItem.dispose 1
+    pop temp 0
+    goto QueueItem_0
+label QueueItem_1
+label QueueItem_0
+    push this 0
+    call Egg.dispose 1
+    pop temp 0
+    push pointer 0
+    call Memory.deAlloc 1
+    pop temp 0
+    push constant 0
+    return
+function QueueItem.delete 0
+    push argument 0
+    pop pointer 0
+    push pointer 0
+    call Memory.deAlloc 1
+    pop temp 0
+    push constant 0
+    return

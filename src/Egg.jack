@@ -6,7 +6,6 @@ class Egg
         let initialPosition = g;
         let screenPosition = 0;
         let iterations = 0;
-        do doSmth();
         return this;
     }
     method boolean changeScreenPosition(){
