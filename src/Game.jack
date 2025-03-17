@@ -144,11 +144,13 @@ class Game
 
         let position = 0;
         let counter = score;
-
+        do Screen.setColor(false);
+        do Screen.drawRectangle(position, 10, position + 40, 19);
+        do Screen.setColor(true);
         while(~(score = 0))
         {
             let ost = counter - (counter / 10);
-            do drawNumber(ost);
+            do drawNumber(ost, position);
             let counter = counter / 10;
             let position = position + 10;
         }
@@ -165,82 +167,82 @@ class Game
     {
         if(number = 0)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         if(number = 1)
         {
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
         }
         if(number = 2)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         if(number = 3)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         if(number = 4)
         {
-            do drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
         }
         if(number = 5)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         if(number = 6)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         if(number = 7)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
         }
         if(number = 8)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position, 14, position + 1, 19);//нижняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         if(number = 9)
         {
-            do drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
-            do drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
-            do drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
-            do drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
-            do drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
-            do drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 5, 11);//верхняя горизонтальная
+            do Screen.drawRectangle(position, 10, position + 1, 15);//верхняя левая вертикальная
+            do Screen.drawRectangle(position + 4, 10, position + 5, 15);//верхняя правая вертикальная
+            do Screen.drawRectangle(position, 14, position + 5, 15);//посередине горизонтальная
+            do Screen.drawRectangle(position + 4, 14, position + 5, 19);//нижняя правая вертикальная
+            do Screen.drawRectangle(position, 18, position + 5, 19);//нижняя горизонтальная
         }
         return;
     }
