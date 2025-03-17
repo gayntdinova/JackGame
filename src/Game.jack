@@ -77,7 +77,7 @@ class Game
         while (~(item = null))
         {
             let egg = item.getEgg();
-            let fell = egg.doSmth();//доделать когда появится яйцо /todo
+            let fell = egg.changeScreenPosition();//доделать когда появится яйцо /todo
             let item = item.getNext();
         }
 
@@ -90,6 +90,7 @@ class Game
                 let score = score + 1;
                 do drawScore();
             }
+            do egg.dispose();
         }
         return;
     }
