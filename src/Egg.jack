@@ -6,11 +6,8 @@ class Egg
         let initialPosition = g;
         let screenPosition = 0;
         let iterations = 0;
-<<<<<<< HEAD
         do Screen.setColor(true);
         do draw();
-=======
->>>>>>> ff7c1bdf9af0e974d7ffb518137eb90121884916
         return this;
     }
     method boolean changeScreenPosition(){

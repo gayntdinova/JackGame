@@ -76,10 +76,10 @@ label Queue_4
     pop this 2
     push local 1
     return
-function Queue.getTail 0
+function Queue.getHead 0
     push argument 0
     pop pointer 0
-    push this 1
+    push this 0
     return
 function Queue.length 0
     push argument 0

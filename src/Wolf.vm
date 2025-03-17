@@ -24,35 +24,60 @@ function Wolf.SetPosition 0
 function Wolf.Draw 0
     push argument 0
     pop pointer 0
-    push this 0
+    push constant 0
+    call Screen.setColor 1
+    pop temp 0
+    push constant 100
+    push constant 100
+    push constant 400
+    push constant 256
+    call Screen.drawRectangle 4
+    pop temp 0
     push constant 1
+    neg
+    call Screen.setColor 1
+    pop temp 0
+    push this 0
+    push constant 0
     eq
     not
     if-goto Wolf_1
+    push pointer 0
+    call Wolf.DrawUpLeft 1
+    pop temp 0
     goto Wolf_0
 label Wolf_1
 label Wolf_0
     push this 0
-    push constant 2
+    push constant 1
     eq
     not
     if-goto Wolf_3
+    push pointer 0
+    call Wolf.DrawUpRight 1
+    pop temp 0
     goto Wolf_2
 label Wolf_3
 label Wolf_2
     push this 0
-    push constant 3
+    push constant 2
     eq
     not
     if-goto Wolf_5
+    push pointer 0
+    call Wolf.DrawDownLeft 1
+    pop temp 0
     goto Wolf_4
 label Wolf_5
 label Wolf_4
     push this 0
-    push constant 4
+    push constant 3
     eq
     not
     if-goto Wolf_7
+    push pointer 0
+    call Wolf.DrawDownRight 1
+    pop temp 0
     goto Wolf_6
 label Wolf_7
 label Wolf_6

@@ -35,41 +35,41 @@ label Game_0
     call Keyboard.keyPressed 0
     pop local 0
     push local 0
-    push constant 131
+    push constant 52
     eq
     not
     if-goto Game_3
-    push constant 1
+    push constant 0
     pop local 1
     goto Game_2
 label Game_3
 label Game_2
     push local 0
-    push constant 133
+    push constant 53
     eq
     not
     if-goto Game_5
-    push constant 2
+    push constant 1
     pop local 1
     goto Game_4
 label Game_5
 label Game_4
     push local 0
-    push constant 130
+    push constant 49
     eq
     not
     if-goto Game_7
-    push constant 3
+    push constant 2
     pop local 1
     goto Game_6
 label Game_7
 label Game_6
     push local 0
-    push constant 132
+    push constant 50
     eq
     not
     if-goto Game_9
-    push constant 4
+    push constant 3
     pop local 1
     goto Game_8
 label Game_9
@@ -134,7 +134,7 @@ function Game.goThrewEggs 4
     push constant 0
     pop local 2
     push this 6
-    call Queue.getTail 1
+    call Queue.getHead 1
     pop local 0
 label Game_16
     push local 0
@@ -190,6 +190,12 @@ label Game_23
     call Game.drawScore 1
     pop temp 0
 label Game_22
+    push constant 0
+    call Screen.setColor 1
+    pop temp 0
+    push local 3
+    call Egg.draw 1
+    pop temp 0
     push local 3
     call Egg.dispose 1
     pop temp 0
@@ -223,9 +229,9 @@ label Game_24
     add
     push constant 4
     call Math.divide 2
-    sub
     push constant 4
     call Math.multiply 2
+    sub
     pop local 0
     goto Game_24
 label Game_25
@@ -286,7 +292,7 @@ function Game.drawBackground 0
 function Game.drawScore 3
     push argument 0
     pop pointer 0
-    push constant 0
+    push constant 200
     pop local 2
     push this 1
     pop local 0
@@ -294,9 +300,11 @@ function Game.drawScore 3
     call Screen.setColor 1
     pop temp 0
     push local 2
+    push constant 30
+    sub
     push constant 10
     push local 2
-    push constant 40
+    push constant 10
     add
     push constant 19
     call Screen.drawRectangle 4
@@ -306,7 +314,7 @@ function Game.drawScore 3
     call Screen.setColor 1
     pop temp 0
 label Game_30
-    push this 1
+    push local 0
     push constant 0
     eq
     not
@@ -316,6 +324,8 @@ label Game_30
     push local 0
     push constant 10
     call Math.divide 2
+    push constant 10
+    call Math.multiply 2
     sub
     pop local 1
     push pointer 0
@@ -329,7 +339,7 @@ label Game_30
     pop local 0
     push local 2
     push constant 10
-    add
+    sub
     pop local 2
     goto Game_30
 label Game_31

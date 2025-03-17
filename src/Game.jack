@@ -7,7 +7,7 @@ class Game
 
     field Queue eggsGroup;
 
-    field Array GroupsTails;
+    field Array GroupsHeads;
 
     constructor Game new()
     {
@@ -18,7 +18,7 @@ class Game
         let isOver = false;
         let random = Random.new();
         let eggsGroup = Queue.new();
-        let GroupsTails = Array.new(4);
+        let GroupsHeads = Array.new(4);
         return this;
     }
 
@@ -36,15 +36,15 @@ class Game
             let key = Keyboard.keyPressed();
 
             //тут считываю значение с клавиатуры, надо потом настроить значения, пока они на стрелочки просто /todo
-            if (key = 131){ let position = 1;}
-            if (key = 133){ let position = 2;}
-            if (key = 130){ let position = 3;}
-            if (key = 132){ let position = 4;}
+            if (key = 52){ let position = 0;}
+            if (key = 53){ let position = 1;}
+            if (key = 49){ let position = 2;}
+            if (key = 50){ let position = 3;}
 
             do wolf.SetPosition(position);
             do wolf.Draw();//изменится, поменять /todo
 
-            do Sys.wait(200);
+            do Sys.wait(250);
 
             //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
             do goThrewEggs();
@@ -73,7 +73,7 @@ class Game
         var Egg egg;
 
         let label = false;
-        let item = eggsGroup.getTail();
+        let item = eggsGroup.getHead();
 
         while (~(item = null))
         {
@@ -92,6 +92,8 @@ class Game
                 let score = score + 1;
                 do drawScore();
             }
+            do Screen.setColor(false);
+            do egg.draw();
             do egg.dispose();
         }
         return;
@@ -111,7 +113,7 @@ class Game
         while (~label)
         {
             let label = tryPush(groupNumber);
-            let groupNumber = groupNumber + 1 - ((groupNumber + 1) / 4) * 4;
+            let groupNumber = groupNumber + 1 - (((groupNumber + 1) / 4) * 4);
         }
         return;
     }
@@ -121,14 +123,14 @@ class Game
         var Egg newEgg;
         var Egg tailEgg;
 
-        let tailEgg = GroupsTails[groupNumber];
+        let tailEgg = GroupsHeads[groupNumber];
 
         if (~(tailEgg = null))
         {
             if(tailEgg.getStage() = 0){return false;}
         }
         let newEgg = Egg.new(groupNumber);
-        let GroupsTails[groupNumber] = newEgg;
+        let GroupsHeads[groupNumber] = newEgg;
         do eggsGroup.enqueue(newEgg);
 
         return true;
@@ -144,19 +146,19 @@ class Game
     {
         var int counter;
         var int ost;
-        var int position;
+        var int pos;
 
-        let position = 0;
+        let pos = 200;
         let counter = score;
         do Screen.setColor(false);
-        do Screen.drawRectangle(position, 10, position + 40, 19);
+        do Screen.drawRectangle(pos-30, 10, pos+10, 19);
         do Screen.setColor(true);
-        while(~(score = 0))
+        while(~(counter = 0))
         {
-            let ost = counter - (counter / 10);
-            do drawNumber(ost, position);
+            let ost = counter - ((counter / 10)*10);
+            do drawNumber(ost, pos);
             let counter = counter / 10;
-            let position = position + 10;
+            let pos = pos - 10;
         }
         return;
     }

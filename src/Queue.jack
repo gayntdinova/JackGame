@@ -49,9 +49,9 @@ class Queue
         return egg;
     }
 
-    method QueueItem getTail()
+    method QueueItem getHead()
     {
-        return tail;
+        return head;
     }
 
     method QueueItem length()
