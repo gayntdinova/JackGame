@@ -41,7 +41,7 @@ class Wolf {
     }
 
     method void DrawUpLeft() {
-        do graphics.drawWolfUpLeft(106 * 32 + 6);
+        do graphics.drawWolfUpLeft(106 * 32 + 4);
         return;
     }
 
@@ -51,7 +51,7 @@ class Wolf {
     }
 
     method void DrawDownLeft() {
-        do graphics.drawWolfDownLeft(106 * 32 + 6);
+        do graphics.drawWolfDownLeft(106 * 32 + 4);
         return;
     }
 
