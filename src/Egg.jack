@@ -8,8 +8,9 @@ class Egg
         do doSmth();
         return this;
     }
-    method boolean doSmth(){
-        return false;
+    method boolean changeScreenPosition(){
+        let screenPosition = screenPosition + 1;
+        return screenPosition = 6;
     }
     method void dispose(){
         return;
