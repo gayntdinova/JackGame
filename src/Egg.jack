@@ -1,6 +1,6 @@
 class Egg
 {
-    field int initialPosition, screenPosition;
+    field int initialPosition, screenPosition, iterations;
 
     constructor Egg new(int g){
         let initialPosition = g;
@@ -9,7 +9,12 @@ class Egg
         return this;
     }
     method boolean changeScreenPosition(){
-        let screenPosition = screenPosition + 1;
+        let iterations = iterations + 1;
+        if (iterations - ((iterations / 4) * 4) = 0)
+        {
+            let screenPosition = screenPosition + 1;
+        }
+        
         return screenPosition = 6;
     }
     method void dispose(){
