@@ -28,6 +28,7 @@ class Game
         var int position;
 
         do drawBackground();
+        do drawScore();
 
         while (~isOver)
         {
@@ -79,7 +80,7 @@ class Game
         while (~(item = null))
         {
             let egg = item.getEgg();
-            let fell = egg.changeScreenPosition();//доделать когда появится яйцо /todo
+            let fell = egg.changeScreenPosition();
             if (fell){let label = true;}
             let item = item.getNext();
         }
@@ -139,7 +140,39 @@ class Game
 
     method void drawBackground()
     {
-        //нарисовать фон /todo
+        do Screen.setColor(true);
+        do Screen.drawLine(5,100,30,100);
+        do Screen.drawLine(5,99,30,99);
+        do Screen.drawLine(5,98,30,98);
+
+        do Screen.drawLine(30,100,106,130);
+        do Screen.drawLine(30,99,106,129);
+        do Screen.drawLine(30,98,106,128);
+
+        do Screen.drawLine(5,157,30,157);
+        do Screen.drawLine(5,156,30,156);
+        do Screen.drawLine(5,155,30,155);
+
+        do Screen.drawLine(30,157,106,187);
+        do Screen.drawLine(30,156,106,186);
+        do Screen.drawLine(30,155,106,185);
+
+        do Screen.drawLine(507,100,482,100);
+        do Screen.drawLine(507,99,482,99);
+        do Screen.drawLine(507,98,482,98);
+
+        do Screen.drawLine(482,100,406,130);
+        do Screen.drawLine(482,99,406,129);
+        do Screen.drawLine(482,98,406,128);
+
+        do Screen.drawLine(507,157,482,157);
+        do Screen.drawLine(507,156,482,156);
+        do Screen.drawLine(507,155,482,155);
+
+        do Screen.drawLine(482,157,406,187);
+        do Screen.drawLine(482,156,406,186);
+        do Screen.drawLine(482,155,406,185);
+
         return;
     }
 
@@ -149,11 +182,12 @@ class Game
         var int ost;
         var int pos;
 
-        let pos = 200;
+        let pos = 250;
         let counter = score;
         do Screen.setColor(false);
         do Screen.drawRectangle(pos-30, 10, pos+10, 19);
         do Screen.setColor(true);
+        if(counter = 0){do drawNumber(0, pos);}
         while(~(counter = 0))
         {
             let ost = counter - ((counter / 10)*10);
