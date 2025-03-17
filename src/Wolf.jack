@@ -18,7 +18,7 @@ class Wolf {
 
     method void Draw() {
 		do Screen.setColor(false);
-        do Screen.drawRectangle(50, 100, 400, 256);
+        do Screen.drawRectangle(30, 100, 400, 256);
         do Screen.setColor(true);
         if (position = 0) {
             do DrawUpLeft();
@@ -41,22 +41,22 @@ class Wolf {
     }
 
     method void DrawUpLeft() {
-        do graphics.drawWolfUpLeft(106 * 32);
+        do graphics.drawWolfUpLeft(106 * 32 + 3);
         return;
     }
 
     method void DrawUpRight() {
-        do graphics.drawWolfUpRight(106 * 32 + 6);
+        do graphics.drawWolfUpRight(106 * 32 + 10);
         return;
     }
 
     method void DrawDownLeft() {
-        do graphics.drawWolfDownLeft(106 * 32);
+        do graphics.drawWolfDownLeft(106 * 32 + 3);
         return;
     }
 
     method void DrawDownRight() {
-        do graphics.drawWolfDownRight(106 * 32 + 6);
+        do graphics.drawWolfDownRight(106 * 32 + 10);
         return;
     }
 }
