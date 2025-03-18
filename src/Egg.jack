@@ -27,15 +27,15 @@ class Egg
         {
             if (screenPosition = 0)
             {
-                do eggGraphic.drawEgg(85 * 32 + 2);
+                do eggGraphic.drawEgg(86 * 32 + 2);
             }
             if (screenPosition = 1)
             {
-                do eggGraphic.drawEgg(90 * 32 + 3);
+                do eggGraphic.drawEgg(92 * 32 + 3);
             }
             if (screenPosition = 2)
             {
-                do eggGraphic.drawEgg(95 * 32 + 4);
+                do eggGraphic.drawEgg(100 * 32 + 4);
             }
             if (screenPosition = 3)
             {
