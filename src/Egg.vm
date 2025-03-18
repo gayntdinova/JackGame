@@ -63,6 +63,103 @@ function Egg.draw 0
     push argument 0
     pop pointer 0
     push this 0
+    push constant 0
+    eq
+    not
+    if-goto Egg_3
+    push this 1
+    push constant 0
+    eq
+    not
+    if-goto Egg_5
+    push constant 86
+    push constant 32
+    call Math.multiply 2
+    push constant 2
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_4
+label Egg_5
+label Egg_4
+    push this 1
+    push constant 1
+    eq
+    not
+    if-goto Egg_7
+    push constant 92
+    push constant 32
+    call Math.multiply 2
+    push constant 3
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_6
+label Egg_7
+label Egg_6
+    push this 1
+    push constant 2
+    eq
+    not
+    if-goto Egg_9
+    push constant 100
+    push constant 32
+    call Math.multiply 2
+    push constant 4
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_8
+label Egg_9
+label Egg_8
+    push this 1
+    push constant 3
+    eq
+    not
+    if-goto Egg_11
+    push constant 110
+    push constant 32
+    call Math.multiply 2
+    push constant 6
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_10
+label Egg_11
+label Egg_10
+    push this 1
+    push constant 4
+    eq
+    not
+    if-goto Egg_13
+    push constant 120
+    push constant 32
+    call Math.multiply 2
+    push constant 7
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_12
+label Egg_13
+label Egg_12
+    push this 1
+    push constant 5
+    eq
+    not
+    if-goto Egg_15
+    push constant 140
+    push constant 32
+    call Math.multiply 2
+    push constant 8
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_14
+label Egg_15
+label Egg_14
+    goto Egg_2
+label Egg_3
+    push this 0
     push constant 10
     call Math.multiply 2
     push this 1
@@ -80,6 +177,7 @@ function Egg.draw 0
     add
     call Screen.drawRectangle 4
     pop temp 0
+label Egg_2
     push constant 0
     return
 function Egg.dispose 0

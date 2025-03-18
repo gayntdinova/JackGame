@@ -30,6 +30,30 @@ function Game.run 2
     push pointer 0
     call Game.drawScore 1
     pop temp 0
+    push constant 32
+    push constant 124
+    call Math.multiply 2
+    push constant 30
+    add
+    call Chicken.drawRightChicken 1
+    pop temp 0
+    push constant 32
+    push constant 67
+    call Math.multiply 2
+    push constant 30
+    add
+    call Chicken.drawRightChicken 1
+    pop temp 0
+    push constant 32
+    push constant 124
+    call Math.multiply 2
+    call Chicken.drawLeftChicken 1
+    pop temp 0
+    push constant 32
+    push constant 67
+    call Math.multiply 2
+    call Chicken.drawLeftChicken 1
+    pop temp 0
 label Game_0
     push this 4
     not
