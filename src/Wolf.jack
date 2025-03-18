@@ -18,7 +18,7 @@ class Wolf {
 
     method void Draw() {
 		do Screen.setColor(false);
-        do Screen.drawRectangle(107, 100, 400, 256);
+        do Screen.drawRectangle(107, 100, 400, 255);
         do Screen.setColor(true);
         if (position = 0) {
             do DrawUpLeft();
