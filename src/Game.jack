@@ -57,7 +57,8 @@ class Game
             //ускоряю игру, если скор стал больше 5, то яйцо спавнится каждые 7 итераций и тд, можно переместить метод в прохождение по яйцам /todo
             if (score > 10){let eggDelay = 13;}
             if (score > 19){let eggDelay = 9;}
-            if (score > 26){let eggDelay = 5;}
+            if (score > 26){let eggDelay = 6;}
+            if (score > 36){let eggDelay = 4;}
 
             if (eggDelayCounter - ((eggDelayCounter/eggDelay)*eggDelay) = 0)
             {
@@ -67,10 +68,9 @@ class Game
             else{let eggDelayCounter = eggDelayCounter + 1;}
         }
         do Screen.clearScreen();
-        do graphicsBack.draw(250);
+        do graphicsBack.draw(32*106+13);
         return;
     }
-
 
     method void goThrewEggs()
     {
