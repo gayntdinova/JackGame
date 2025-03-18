@@ -29,6 +29,10 @@ class Game
 
         do drawBackground();
         do drawScore();
+        do Chicken.drawRightChicken(32 * 124 + 30);
+        do Chicken.drawRightChicken(32 * 67 + 30);
+        do Chicken.drawLeftChicken(32 * 124);
+        do Chicken.drawLeftChicken(32 * 67);
 
         while (~isOver)
         {
