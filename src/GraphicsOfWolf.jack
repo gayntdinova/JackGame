@@ -1,4 +1,5 @@
-class graphics{
+//отрисовка волка
+class GraphicsOfWolf{
 function void drawWolfDownRight(int location) {
 	var int memAddress;
 	let memAddress = 16384+location;

@@ -5,23 +5,23 @@ function Wolf.new 0
     push constant 1
     pop this 0
     push pointer 0
-    call Wolf.Draw 1
+    call Wolf.draw 1
     pop temp 0
     push pointer 0
     return
-function Wolf.GetPosition 0
+function Wolf.getPosition 0
     push argument 0
     pop pointer 0
     push this 0
     return
-function Wolf.SetPosition 0
+function Wolf.setPosition 0
     push argument 0
     pop pointer 0
     push argument 1
     pop this 0
     push constant 0
     return
-function Wolf.Draw 0
+function Wolf.draw 0
     push argument 0
     pop pointer 0
     push constant 0
@@ -43,7 +43,7 @@ function Wolf.Draw 0
     not
     if-goto Wolf_1
     push pointer 0
-    call Wolf.DrawUpLeft 1
+    call Wolf.drawUpLeft 1
     pop temp 0
     goto Wolf_0
 label Wolf_1
@@ -54,7 +54,7 @@ label Wolf_0
     not
     if-goto Wolf_3
     push pointer 0
-    call Wolf.DrawUpRight 1
+    call Wolf.drawUpRight 1
     pop temp 0
     goto Wolf_2
 label Wolf_3
@@ -65,7 +65,7 @@ label Wolf_2
     not
     if-goto Wolf_5
     push pointer 0
-    call Wolf.DrawDownLeft 1
+    call Wolf.drawDownLeft 1
     pop temp 0
     goto Wolf_4
 label Wolf_5
@@ -76,7 +76,7 @@ label Wolf_4
     not
     if-goto Wolf_7
     push pointer 0
-    call Wolf.DrawDownRight 1
+    call Wolf.drawDownRight 1
     pop temp 0
     goto Wolf_6
 label Wolf_7
@@ -91,7 +91,7 @@ function Wolf.dispose 0
     pop temp 0
     push constant 0
     return
-function Wolf.DrawUpLeft 0
+function Wolf.drawUpLeft 0
     push argument 0
     pop pointer 0
     push constant 106
@@ -99,11 +99,11 @@ function Wolf.DrawUpLeft 0
     call Math.multiply 2
     push constant 6
     add
-    call graphics.drawWolfUpLeft 1
+    call GraphicsOfWolf.drawWolfUpLeft 1
     pop temp 0
     push constant 0
     return
-function Wolf.DrawUpRight 0
+function Wolf.drawUpRight 0
     push argument 0
     pop pointer 0
     push constant 106
@@ -111,11 +111,11 @@ function Wolf.DrawUpRight 0
     call Math.multiply 2
     push constant 12
     add
-    call graphics.drawWolfUpRight 1
+    call GraphicsOfWolf.drawWolfUpRight 1
     pop temp 0
     push constant 0
     return
-function Wolf.DrawDownLeft 0
+function Wolf.drawDownLeft 0
     push argument 0
     pop pointer 0
     push constant 106
@@ -123,11 +123,11 @@ function Wolf.DrawDownLeft 0
     call Math.multiply 2
     push constant 6
     add
-    call graphics.drawWolfDownLeft 1
+    call GraphicsOfWolf.drawWolfDownLeft 1
     pop temp 0
     push constant 0
     return
-function Wolf.DrawDownRight 0
+function Wolf.drawDownRight 0
     push argument 0
     pop pointer 0
     push constant 106
@@ -135,7 +135,7 @@ function Wolf.DrawDownRight 0
     call Math.multiply 2
     push constant 12
     add
-    call graphics.drawWolfDownRight 1
+    call GraphicsOfWolf.drawWolfDownRight 1
     pop temp 0
     push constant 0
     return

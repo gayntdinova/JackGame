@@ -1,4 +1,4 @@
-class eggGraphic{
+class EggGraphic{
     function void drawEgg(int location) {
         var int memAddress;
         let memAddress = 16384+location;
@@ -21,7 +21,7 @@ class eggGraphic{
         do Memory.poke(memAddress +480, Memory.peek(memAddress+480) + 496 - (Memory.peek(memAddress+480) & 496));
         return;
     }
-    function void draw2(int location) {
+    function void clearEgg(int location) {
         var int memAddress;
         let memAddress = 16384+location;
         // column 0

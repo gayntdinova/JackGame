@@ -1,6 +1,7 @@
+// отрисовка куриц
 class Chicken {
     function void drawRightChicken(int location) {
-        var int memAddress; 
+        var int memAddress;
         let memAddress = 16384+location;
         // column 0
         do Memory.poke(memAddress, 7936);
@@ -65,7 +66,7 @@ class Chicken {
     }
 
     function void drawLeftChicken(int location) {
-        var int memAddress; 
+        var int memAddress;
         let memAddress = 16384+location;
         // column 0
         do Memory.poke(memAddress +160, -32738);

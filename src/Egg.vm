@@ -71,7 +71,7 @@ function Egg.draw 0
     call Math.multiply 2
     push constant 2
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_4
 label Egg_5
@@ -86,14 +86,14 @@ label Egg_4
     call Math.multiply 2
     push constant 2
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 92
     push constant 32
     call Math.multiply 2
     push constant 3
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_6
 label Egg_7
@@ -108,14 +108,14 @@ label Egg_6
     call Math.multiply 2
     push constant 3
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 100
     push constant 32
     call Math.multiply 2
     push constant 4
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_8
 label Egg_9
@@ -130,14 +130,14 @@ label Egg_8
     call Math.multiply 2
     push constant 4
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 110
     push constant 32
     call Math.multiply 2
     push constant 6
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_10
 label Egg_11
@@ -152,14 +152,14 @@ label Egg_10
     call Math.multiply 2
     push constant 6
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 120
     push constant 32
     call Math.multiply 2
     push constant 7
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_12
 label Egg_13
@@ -174,7 +174,7 @@ label Egg_12
     call Math.multiply 2
     push constant 7
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     goto Egg_14
 label Egg_15
@@ -197,7 +197,7 @@ label Egg_2
     call Math.multiply 2
     push constant 2
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_18
 label Egg_19
@@ -212,14 +212,14 @@ label Egg_18
     call Math.multiply 2
     push constant 2
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 148
     push constant 32
     call Math.multiply 2
     push constant 3
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_20
 label Egg_21
@@ -234,14 +234,14 @@ label Egg_20
     call Math.multiply 2
     push constant 3
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 156
     push constant 32
     call Math.multiply 2
     push constant 4
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_22
 label Egg_23
@@ -256,14 +256,14 @@ label Egg_22
     call Math.multiply 2
     push constant 4
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 166
     push constant 32
     call Math.multiply 2
     push constant 6
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_24
 label Egg_25
@@ -278,14 +278,14 @@ label Egg_24
     call Math.multiply 2
     push constant 6
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 176
     push constant 32
     call Math.multiply 2
     push constant 7
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_26
 label Egg_27
@@ -300,7 +300,7 @@ label Egg_26
     call Math.multiply 2
     push constant 7
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     goto Egg_28
 label Egg_29
@@ -323,7 +323,7 @@ label Egg_16
     call Math.multiply 2
     push constant 28
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_32
 label Egg_33
@@ -338,14 +338,14 @@ label Egg_32
     call Math.multiply 2
     push constant 28
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 102
     push constant 32
     call Math.multiply 2
     push constant 27
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_34
 label Egg_35
@@ -360,14 +360,14 @@ label Egg_34
     call Math.multiply 2
     push constant 27
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 106
     push constant 32
     call Math.multiply 2
     push constant 26
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_36
 label Egg_37
@@ -382,14 +382,14 @@ label Egg_36
     call Math.multiply 2
     push constant 26
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 112
     push constant 32
     call Math.multiply 2
     push constant 25
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_38
 label Egg_39
@@ -404,14 +404,14 @@ label Egg_38
     call Math.multiply 2
     push constant 25
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 120
     push constant 32
     call Math.multiply 2
     push constant 24
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_40
 label Egg_41
@@ -426,7 +426,7 @@ label Egg_40
     call Math.multiply 2
     push constant 24
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     goto Egg_42
 label Egg_43
@@ -449,7 +449,7 @@ label Egg_30
     call Math.multiply 2
     push constant 28
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_46
 label Egg_47
@@ -464,14 +464,14 @@ label Egg_46
     call Math.multiply 2
     push constant 28
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 158
     push constant 32
     call Math.multiply 2
     push constant 27
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_48
 label Egg_49
@@ -486,14 +486,14 @@ label Egg_48
     call Math.multiply 2
     push constant 27
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 162
     push constant 32
     call Math.multiply 2
     push constant 26
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_50
 label Egg_51
@@ -508,14 +508,14 @@ label Egg_50
     call Math.multiply 2
     push constant 26
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 168
     push constant 32
     call Math.multiply 2
     push constant 25
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_52
 label Egg_53
@@ -530,14 +530,14 @@ label Egg_52
     call Math.multiply 2
     push constant 25
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     push constant 176
     push constant 32
     call Math.multiply 2
     push constant 24
     add
-    call eggGraphic.drawEgg 1
+    call EggGraphic.drawEgg 1
     pop temp 0
     goto Egg_54
 label Egg_55
@@ -552,7 +552,7 @@ label Egg_54
     call Math.multiply 2
     push constant 24
     add
-    call eggGraphic.draw2 1
+    call EggGraphic.clearEgg 1
     pop temp 0
     goto Egg_56
 label Egg_57

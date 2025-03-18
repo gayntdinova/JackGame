@@ -3,34 +3,34 @@ class Wolf {
 
     constructor Wolf new() {
         let position = 1;
-        do Draw();
+        do draw();
         return this;
     }
 
-    method int GetPosition() {
+    method int getPosition() {
         return position;
     }
 
-    method void SetPosition(int value) {
+    method void setPosition(int value) {
         let position = value;
         return;
     }
 
-    method void Draw() {
+    method void draw() {
 		do Screen.setColor(false);
         do Screen.drawRectangle(127, 100, 380, 255);
         do Screen.setColor(true);
         if (position = 0) {
-            do DrawUpLeft();
+            do drawUpLeft();
         }
         if (position = 1) {
-            do DrawUpRight();
+            do drawUpRight();
         }
         if (position = 2) {
-            do DrawDownLeft();
+            do drawDownLeft();
         }
         if (position = 3) {
-            do DrawDownRight();
+            do drawDownRight();
         }
         return;
     }
@@ -40,23 +40,23 @@ class Wolf {
         return;
     }
 
-    method void DrawUpLeft() {
-        do graphics.drawWolfUpLeft(106 * 32 + 6);
+    method void drawUpLeft() {
+        do GraphicsOfWolf.drawWolfUpLeft(106 * 32 + 6);
         return;
     }
 
-    method void DrawUpRight() {
-        do graphics.drawWolfUpRight(106 * 32 + 12);
+    method void drawUpRight() {
+        do GraphicsOfWolf.drawWolfUpRight(106 * 32 + 12);
         return;
     }
 
-    method void DrawDownLeft() {
-        do graphics.drawWolfDownLeft(106 * 32 + 6);
+    method void drawDownLeft() {
+        do GraphicsOfWolf.drawWolfDownLeft(106 * 32 + 6);
         return;
     }
 
-    method void DrawDownRight() {
-        do graphics.drawWolfDownRight(106 * 32 + 12);
+    method void drawDownRight() {
+        do GraphicsOfWolf.drawWolfDownRight(106 * 32 + 12);
         return;
     }
 }

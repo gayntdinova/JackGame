@@ -16,5 +16,3 @@ class Random
         return generalValue - ((generalValue / 4) * 4);
     }
 }
-// рандомная генерация откуда падает яйцо
-// Егор

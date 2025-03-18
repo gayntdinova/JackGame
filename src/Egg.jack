@@ -21,146 +21,143 @@ class Egg
         }
         return screenPosition = 5;
     }
+    //отрисовка яиц на экране во время падения
     method void draw(){
         if (initialPosition = 0)
         {
             if (screenPosition = 0)
             {
-                do eggGraphic.drawEgg(86 * 32 + 2);
+                do EggGraphic.drawEgg(86 * 32 + 2);
             }
             if (screenPosition = 1)
             {
-                do eggGraphic.draw2(86 * 32 + 2);
-                do eggGraphic.drawEgg(92 * 32 + 3);
+                do EggGraphic.clearEgg(86 * 32 + 2);
+                do EggGraphic.drawEgg(92 * 32 + 3);
             }
             if (screenPosition = 2)
             {
-                do eggGraphic.draw2(92 * 32 + 3);
-                do eggGraphic.drawEgg(100 * 32 + 4);
+                do EggGraphic.clearEgg(92 * 32 + 3);
+                do EggGraphic.drawEgg(100 * 32 + 4);
             }
             if (screenPosition = 3)
             {
-                do eggGraphic.draw2(100 * 32 + 4);
-                do eggGraphic.drawEgg(110 * 32 + 6);
+                do EggGraphic.clearEgg(100 * 32 + 4);
+                do EggGraphic.drawEgg(110 * 32 + 6);
             }
             if (screenPosition = 4)
             {
-                do eggGraphic.draw2(110 * 32 + 6);
-                do eggGraphic.drawEgg(120 * 32 + 7);
+                do EggGraphic.clearEgg(110 * 32 + 6);
+                do EggGraphic.drawEgg(120 * 32 + 7);
             }
             if (screenPosition = 5)
             {
-                do eggGraphic.draw2(120 * 32 + 7);
+                do EggGraphic.clearEgg(120 * 32 + 7);
             }
         }
         if (initialPosition = 2)
         {
             if (screenPosition = 0)
             {
-                do eggGraphic.drawEgg(142 * 32 + 2);
+                do EggGraphic.drawEgg(142 * 32 + 2);
             }
             if (screenPosition = 1)
             {
-                do eggGraphic.draw2(142 * 32 + 2);
-                do eggGraphic.drawEgg(148 * 32 + 3);
+                do EggGraphic.clearEgg(142 * 32 + 2);
+                do EggGraphic.drawEgg(148 * 32 + 3);
             }
             if (screenPosition = 2)
             {
-                do eggGraphic.draw2(148 * 32 + 3);
-                do eggGraphic.drawEgg(156 * 32 + 4);
+                do EggGraphic.clearEgg(148 * 32 + 3);
+                do EggGraphic.drawEgg(156 * 32 + 4);
             }
             if (screenPosition = 3)
             {
-                do eggGraphic.draw2(156 * 32 + 4);
-                do eggGraphic.drawEgg(166 * 32 + 6);
+                do EggGraphic.clearEgg(156 * 32 + 4);
+                do EggGraphic.drawEgg(166 * 32 + 6);
             }
             if (screenPosition = 4)
             {
-                do eggGraphic.draw2(166 * 32 + 6);
-                do eggGraphic.drawEgg(176 * 32 + 7);
+                do EggGraphic.clearEgg(166 * 32 + 6);
+                do EggGraphic.drawEgg(176 * 32 + 7);
             }
             if (screenPosition = 5)
             {
-                do eggGraphic.draw2(176 * 32 + 7);
+                do EggGraphic.clearEgg(176 * 32 + 7);
             }
         }
         if (initialPosition = 1)
         {
             if (screenPosition = 0)
             {
-                do eggGraphic.drawEgg(96 * 32 + 28);
+                do EggGraphic.drawEgg(96 * 32 + 28);
             }
             if (screenPosition = 1)
             {
-                do eggGraphic.draw2(96 * 32 + 28);
-                do eggGraphic.drawEgg(102 * 32 + 27);
+                do EggGraphic.clearEgg(96 * 32 + 28);
+                do EggGraphic.drawEgg(102 * 32 + 27);
             }
             if (screenPosition = 2)
             {
-                do eggGraphic.draw2(102 * 32 + 27);
-                do eggGraphic.drawEgg(106 * 32 + 26);
+                do EggGraphic.clearEgg(102 * 32 + 27);
+                do EggGraphic.drawEgg(106 * 32 + 26);
             }
             if (screenPosition = 3)
             {
-                do eggGraphic.draw2(106 * 32 + 26);
-                do eggGraphic.drawEgg(112 * 32 + 25);
+                do EggGraphic.clearEgg(106 * 32 + 26);
+                do EggGraphic.drawEgg(112 * 32 + 25);
             }
             if (screenPosition = 4)
             {
-                do eggGraphic.draw2(112 * 32 + 25);
-                do eggGraphic.drawEgg(120 * 32 + 24);
+                do EggGraphic.clearEgg(112 * 32 + 25);
+                do EggGraphic.drawEgg(120 * 32 + 24);
             }
             if (screenPosition = 5)
             {
-                do eggGraphic.draw2(120 * 32 + 24);
+                do EggGraphic.clearEgg(120 * 32 + 24);
             }
         }
         if (initialPosition = 3)
         {
             if (screenPosition = 0)
             {
-                do eggGraphic.drawEgg(152 * 32 + 28);
+                do EggGraphic.drawEgg(152 * 32 + 28);
             }
             if (screenPosition = 1)
             {
-                do eggGraphic.draw2(152 * 32 + 28);
-                do eggGraphic.drawEgg(158 * 32 + 27);
+                do EggGraphic.clearEgg(152 * 32 + 28);
+                do EggGraphic.drawEgg(158 * 32 + 27);
             }
             if (screenPosition = 2)
             {
-                do eggGraphic.draw2(158 * 32 + 27);
-                do eggGraphic.drawEgg(162 * 32 + 26);
+                do EggGraphic.clearEgg(158 * 32 + 27);
+                do EggGraphic.drawEgg(162 * 32 + 26);
             }
             if (screenPosition = 3)
             {
-                do eggGraphic.draw2(162 * 32 + 26);
-                do eggGraphic.drawEgg(168 * 32 + 25);
+                do EggGraphic.clearEgg(162 * 32 + 26);
+                do EggGraphic.drawEgg(168 * 32 + 25);
             }
             if (screenPosition = 4)
             {
-                do eggGraphic.draw2(168 * 32 + 25);
-                do eggGraphic.drawEgg(176 * 32 + 24);
+                do EggGraphic.clearEgg(168 * 32 + 25);
+                do EggGraphic.drawEgg(176 * 32 + 24);
             }
             if (screenPosition = 5)
             {
-                do eggGraphic.draw2(176 * 32 + 24);
+                do EggGraphic.clearEgg(176 * 32 + 24);
             }
-        }        
+        }
         return;
     }
     method void dispose(){
         return;
     }
+    //возвращает позицию откуда падает(их 4)
     method int getPosition(){
         return initialPosition;
-        // 1 - верх-лево, 2- верх-право, 3- низ-лево, 4- низ-право
     }
+    //возвращает стадию падения(их 5)
     method int getStage(){
         return screenPosition;
-        // 5 фаз падения
     }
 }
-// у яйца 5 положений во время падения с полки из курятника
-// поле какая фаза падения
-// поле откуда падает
-// Егор

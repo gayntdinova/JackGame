@@ -1,6 +1,44 @@
-class graphicsBack
+//отрисовка фона
+class GraphicsBack
 {
-    function void draw(int location) {
+	function void drawBackground()
+    {
+        do Screen.setColor(true);
+        do Screen.drawLine(5,100,30,100);
+        do Screen.drawLine(5,99,30,99);
+        do Screen.drawLine(5,98,30,98);
+
+        do Screen.drawLine(30,100,106,130);
+        do Screen.drawLine(30,99,106,129);
+        do Screen.drawLine(30,98,106,128);
+
+        do Screen.drawLine(5,157,30,157);
+        do Screen.drawLine(5,156,30,156);
+        do Screen.drawLine(5,155,30,155);
+
+        do Screen.drawLine(30,157,106,187);
+        do Screen.drawLine(30,156,106,186);
+        do Screen.drawLine(30,155,106,185);
+
+        do Screen.drawLine(507,100,482,100);
+        do Screen.drawLine(507,99,482,99);
+        do Screen.drawLine(507,98,482,98);
+
+        do Screen.drawLine(482,100,406,130);
+        do Screen.drawLine(482,99,406,129);
+        do Screen.drawLine(482,98,406,128);
+
+        do Screen.drawLine(507,157,482,157);
+        do Screen.drawLine(507,156,482,156);
+        do Screen.drawLine(507,155,482,155);
+
+        do Screen.drawLine(482,157,406,187);
+        do Screen.drawLine(482,156,406,186);
+        do Screen.drawLine(482,155,406,185);
+
+        return;
+    }
+    function void drawEndBackground(int location) {
 	var int memAddress;
 	let memAddress = 16384+location;
 	// column 0

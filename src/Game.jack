@@ -4,9 +4,7 @@ class Game
     field int score, eggDelay, eggDelayCounter;
     field boolean isOver;
     field Random random;
-
     field Queue eggsGroup;
-
     field Array GroupsHeads;
 
     constructor Game new()
@@ -27,7 +25,7 @@ class Game
         var char key;
         var int position;
 
-        do drawBackground();
+        do GraphicsBack.drawBackground();
         do drawScore();
         do Chicken.drawRightChicken(32 * 124 + 30);
         do Chicken.drawRightChicken(32 * 67 + 30);
@@ -36,25 +34,21 @@ class Game
 
         while (~isOver)
         {
-            //ожидаю какое то время
-
             let key = Keyboard.keyPressed();
-
-            //тут считываю значение с клавиатуры, надо потом настроить значения, пока они на стрелочки просто /todo
             if (key = 52){ let position = 0;}
             if (key = 53){ let position = 1;}
             if (key = 49){ let position = 2;}
             if (key = 50){ let position = 3;}
 
-            do wolf.SetPosition(position);
-            do wolf.Draw();//изменится, поменять /todo
+            do wolf.setPosition(position);
+            do wolf.draw();
 
             do Sys.wait(250);
 
             //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
             do goThrewEggs();
 
-            //ускоряю игру, если скор стал больше 5, то яйцо спавнится каждые 7 итераций и тд, можно переместить метод в прохождение по яйцам /todo
+            //ускорение игры
             if (score > 10){let eggDelay = 13;}
             if (score > 19){let eggDelay = 9;}
             if (score > 26){let eggDelay = 6;}
@@ -67,8 +61,9 @@ class Game
             }
             else{let eggDelayCounter = eggDelayCounter + 1;}
         }
+        //отрисовка фона при проигрыше
         do Screen.clearScreen();
-        do graphicsBack.draw(32*106+13);
+        do GraphicsBack.drawEndBackground(32*106+13);
         return;
     }
 
@@ -92,7 +87,7 @@ class Game
         if (label)
         {
             let egg = eggsGroup.dequeue();
-            if (~(wolf.GetPosition() = egg.getPosition())){let isOver = true;}
+            if (~(wolf.getPosition() = egg.getPosition())){let isOver = true;}
             else
             {
                 let score = score + 1;
@@ -110,8 +105,7 @@ class Game
         var int groupNumber;
         var boolean label;
 
-        //тут в теории получаем число от 0 до 3, типо куда кидать
-        let groupNumber = random.rand();//надо /todo
+        let groupNumber = random.rand();
 
         let label = false;
 
@@ -141,45 +135,7 @@ class Game
 
         return true;
     }
-
-    method void drawBackground()
-    {
-        do Screen.setColor(true);
-        do Screen.drawLine(5,100,30,100);
-        do Screen.drawLine(5,99,30,99);
-        do Screen.drawLine(5,98,30,98);
-
-        do Screen.drawLine(30,100,106,130);
-        do Screen.drawLine(30,99,106,129);
-        do Screen.drawLine(30,98,106,128);
-
-        do Screen.drawLine(5,157,30,157);
-        do Screen.drawLine(5,156,30,156);
-        do Screen.drawLine(5,155,30,155);
-
-        do Screen.drawLine(30,157,106,187);
-        do Screen.drawLine(30,156,106,186);
-        do Screen.drawLine(30,155,106,185);
-
-        do Screen.drawLine(507,100,482,100);
-        do Screen.drawLine(507,99,482,99);
-        do Screen.drawLine(507,98,482,98);
-
-        do Screen.drawLine(482,100,406,130);
-        do Screen.drawLine(482,99,406,129);
-        do Screen.drawLine(482,98,406,128);
-
-        do Screen.drawLine(507,157,482,157);
-        do Screen.drawLine(507,156,482,156);
-        do Screen.drawLine(507,155,482,155);
-
-        do Screen.drawLine(482,157,406,187);
-        do Screen.drawLine(482,156,406,186);
-        do Screen.drawLine(482,155,406,185);
-
-        return;
-    }
-
+    //отрисовка счёта
     method void drawScore()
     {
         var int counter;
@@ -301,11 +257,3 @@ class Game
 		return;
     }
 }
-//umpalumpa123
-// инициализация объектов - волк, яйца. Игровое взаимодействие.
-// игра бексонечная, сверху счет
-// если фаза у яйца 6, то проверяем волк словит или нет \/
-// поле проиграл ли игрок - game over \/
-// поле список яиц \/
-// Тим
-//gfgffgfg

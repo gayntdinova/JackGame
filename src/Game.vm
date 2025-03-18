@@ -24,8 +24,7 @@ function Game.new 0
 function Game.run 2
     push argument 0
     pop pointer 0
-    push pointer 0
-    call Game.drawBackground 1
+    call GraphicsBack.drawBackground 0
     pop temp 0
     push pointer 0
     call Game.drawScore 1
@@ -103,10 +102,10 @@ label Game_9
 label Game_8
     push this 0
     push local 1
-    call Wolf.SetPosition 2
+    call Wolf.setPosition 2
     pop temp 0
     push this 0
-    call Wolf.Draw 1
+    call Wolf.draw 1
     pop temp 0
     push constant 250
     call Sys.wait 1
@@ -186,7 +185,7 @@ label Game_1
     call Math.multiply 2
     push constant 13
     add
-    call graphicsBack.draw 1
+    call GraphicsBack.drawEndBackground 1
     pop temp 0
     push constant 0
     return
@@ -232,7 +231,7 @@ label Game_21
     call Queue.dequeue 1
     pop local 3
     push this 0
-    call Wolf.GetPosition 1
+    call Wolf.getPosition 1
     push local 3
     call Egg.getPosition 1
     eq
@@ -345,159 +344,6 @@ label Game_30
     pop temp 0
     push constant 1
     neg
-    return
-function Game.drawBackground 0
-    push argument 0
-    pop pointer 0
-    push constant 1
-    neg
-    call Screen.setColor 1
-    pop temp 0
-    push constant 5
-    push constant 100
-    push constant 30
-    push constant 100
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 5
-    push constant 99
-    push constant 30
-    push constant 99
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 5
-    push constant 98
-    push constant 30
-    push constant 98
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 30
-    push constant 100
-    push constant 106
-    push constant 130
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 30
-    push constant 99
-    push constant 106
-    push constant 129
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 30
-    push constant 98
-    push constant 106
-    push constant 128
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 5
-    push constant 157
-    push constant 30
-    push constant 157
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 5
-    push constant 156
-    push constant 30
-    push constant 156
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 5
-    push constant 155
-    push constant 30
-    push constant 155
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 30
-    push constant 157
-    push constant 106
-    push constant 187
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 30
-    push constant 156
-    push constant 106
-    push constant 186
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 30
-    push constant 155
-    push constant 106
-    push constant 185
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 507
-    push constant 100
-    push constant 482
-    push constant 100
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 507
-    push constant 99
-    push constant 482
-    push constant 99
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 507
-    push constant 98
-    push constant 482
-    push constant 98
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 482
-    push constant 100
-    push constant 406
-    push constant 130
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 482
-    push constant 99
-    push constant 406
-    push constant 129
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 482
-    push constant 98
-    push constant 406
-    push constant 128
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 507
-    push constant 157
-    push constant 482
-    push constant 157
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 507
-    push constant 156
-    push constant 482
-    push constant 156
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 507
-    push constant 155
-    push constant 482
-    push constant 155
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 482
-    push constant 157
-    push constant 406
-    push constant 187
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 482
-    push constant 156
-    push constant 406
-    push constant 186
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 482
-    push constant 155
-    push constant 406
-    push constant 185
-    call Screen.drawLine 4
-    pop temp 0
-    push constant 0
     return
 function Game.drawScore 3
     push argument 0

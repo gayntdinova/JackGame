@@ -1,4 +1,4 @@
-function eggGraphic.drawEgg 1
+function EggGraphic.drawEgg 1
     push constant 16384
     push argument 0
     add
@@ -279,7 +279,7 @@ function eggGraphic.drawEgg 1
     pop temp 0
     push constant 0
     return
-function eggGraphic.draw2 1
+function EggGraphic.clearEgg 1
     push constant 16384
     push argument 0
     add
