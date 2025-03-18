@@ -35,12 +35,6 @@ function Egg.changeScreenPosition 0
     eq
     not
     if-goto Egg_1
-    push constant 0
-    call Screen.setColor 1
-    pop temp 0
-    push pointer 0
-    call Egg.draw 1
-    pop temp 0
     push this 1
     push constant 1
     add
@@ -56,7 +50,7 @@ function Egg.changeScreenPosition 0
 label Egg_1
 label Egg_0
     push this 1
-    push constant 6
+    push constant 5
     eq
     return
 function Egg.draw 0
@@ -175,37 +169,397 @@ label Egg_12
     eq
     not
     if-goto Egg_15
-    push constant 140
+    push constant 120
     push constant 32
     call Math.multiply 2
-    push constant 8
+    push constant 7
     add
-    call eggGraphic.drawEgg 1
+    call eggGraphic.draw2 1
     pop temp 0
     goto Egg_14
 label Egg_15
 label Egg_14
     goto Egg_2
 label Egg_3
-    push this 0
-    push constant 10
-    call Math.multiply 2
-    push this 1
-    push constant 10
-    call Math.multiply 2
-    push this 0
-    push constant 10
-    call Math.multiply 2
-    push constant 10
-    add
-    push this 1
-    push constant 10
-    call Math.multiply 2
-    push constant 10
-    add
-    call Screen.drawRectangle 4
-    pop temp 0
 label Egg_2
+    push this 0
+    push constant 2
+    eq
+    not
+    if-goto Egg_17
+    push this 1
+    push constant 0
+    eq
+    not
+    if-goto Egg_19
+    push constant 142
+    push constant 32
+    call Math.multiply 2
+    push constant 2
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_18
+label Egg_19
+label Egg_18
+    push this 1
+    push constant 1
+    eq
+    not
+    if-goto Egg_21
+    push constant 142
+    push constant 32
+    call Math.multiply 2
+    push constant 2
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 148
+    push constant 32
+    call Math.multiply 2
+    push constant 3
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_20
+label Egg_21
+label Egg_20
+    push this 1
+    push constant 2
+    eq
+    not
+    if-goto Egg_23
+    push constant 148
+    push constant 32
+    call Math.multiply 2
+    push constant 3
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 156
+    push constant 32
+    call Math.multiply 2
+    push constant 4
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_22
+label Egg_23
+label Egg_22
+    push this 1
+    push constant 3
+    eq
+    not
+    if-goto Egg_25
+    push constant 156
+    push constant 32
+    call Math.multiply 2
+    push constant 4
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 166
+    push constant 32
+    call Math.multiply 2
+    push constant 6
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_24
+label Egg_25
+label Egg_24
+    push this 1
+    push constant 4
+    eq
+    not
+    if-goto Egg_27
+    push constant 166
+    push constant 32
+    call Math.multiply 2
+    push constant 6
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 176
+    push constant 32
+    call Math.multiply 2
+    push constant 7
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_26
+label Egg_27
+label Egg_26
+    push this 1
+    push constant 5
+    eq
+    not
+    if-goto Egg_29
+    push constant 176
+    push constant 32
+    call Math.multiply 2
+    push constant 7
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    goto Egg_28
+label Egg_29
+label Egg_28
+    goto Egg_16
+label Egg_17
+label Egg_16
+    push this 0
+    push constant 1
+    eq
+    not
+    if-goto Egg_31
+    push this 1
+    push constant 0
+    eq
+    not
+    if-goto Egg_33
+    push constant 96
+    push constant 32
+    call Math.multiply 2
+    push constant 28
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_32
+label Egg_33
+label Egg_32
+    push this 1
+    push constant 1
+    eq
+    not
+    if-goto Egg_35
+    push constant 96
+    push constant 32
+    call Math.multiply 2
+    push constant 28
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 102
+    push constant 32
+    call Math.multiply 2
+    push constant 27
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_34
+label Egg_35
+label Egg_34
+    push this 1
+    push constant 2
+    eq
+    not
+    if-goto Egg_37
+    push constant 102
+    push constant 32
+    call Math.multiply 2
+    push constant 27
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 106
+    push constant 32
+    call Math.multiply 2
+    push constant 26
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_36
+label Egg_37
+label Egg_36
+    push this 1
+    push constant 3
+    eq
+    not
+    if-goto Egg_39
+    push constant 106
+    push constant 32
+    call Math.multiply 2
+    push constant 26
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 112
+    push constant 32
+    call Math.multiply 2
+    push constant 25
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_38
+label Egg_39
+label Egg_38
+    push this 1
+    push constant 4
+    eq
+    not
+    if-goto Egg_41
+    push constant 112
+    push constant 32
+    call Math.multiply 2
+    push constant 25
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 120
+    push constant 32
+    call Math.multiply 2
+    push constant 24
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_40
+label Egg_41
+label Egg_40
+    push this 1
+    push constant 5
+    eq
+    not
+    if-goto Egg_43
+    push constant 120
+    push constant 32
+    call Math.multiply 2
+    push constant 24
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    goto Egg_42
+label Egg_43
+label Egg_42
+    goto Egg_30
+label Egg_31
+label Egg_30
+    push this 0
+    push constant 3
+    eq
+    not
+    if-goto Egg_45
+    push this 1
+    push constant 0
+    eq
+    not
+    if-goto Egg_47
+    push constant 152
+    push constant 32
+    call Math.multiply 2
+    push constant 28
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_46
+label Egg_47
+label Egg_46
+    push this 1
+    push constant 1
+    eq
+    not
+    if-goto Egg_49
+    push constant 152
+    push constant 32
+    call Math.multiply 2
+    push constant 28
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 158
+    push constant 32
+    call Math.multiply 2
+    push constant 27
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_48
+label Egg_49
+label Egg_48
+    push this 1
+    push constant 2
+    eq
+    not
+    if-goto Egg_51
+    push constant 158
+    push constant 32
+    call Math.multiply 2
+    push constant 27
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 162
+    push constant 32
+    call Math.multiply 2
+    push constant 26
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_50
+label Egg_51
+label Egg_50
+    push this 1
+    push constant 3
+    eq
+    not
+    if-goto Egg_53
+    push constant 162
+    push constant 32
+    call Math.multiply 2
+    push constant 26
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 168
+    push constant 32
+    call Math.multiply 2
+    push constant 25
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_52
+label Egg_53
+label Egg_52
+    push this 1
+    push constant 4
+    eq
+    not
+    if-goto Egg_55
+    push constant 168
+    push constant 32
+    call Math.multiply 2
+    push constant 25
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    push constant 176
+    push constant 32
+    call Math.multiply 2
+    push constant 24
+    add
+    call eggGraphic.drawEgg 1
+    pop temp 0
+    goto Egg_54
+label Egg_55
+label Egg_54
+    push this 1
+    push constant 5
+    eq
+    not
+    if-goto Egg_57
+    push constant 176
+    push constant 32
+    call Math.multiply 2
+    push constant 24
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
+    goto Egg_56
+label Egg_57
+label Egg_56
+    goto Egg_44
+label Egg_45
+label Egg_44
     push constant 0
     return
 function Egg.dispose 0
