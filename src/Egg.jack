@@ -23,7 +23,37 @@ class Egg
         return screenPosition = 6;
     }
     method void draw(){
-        do Screen.drawRectangle(initialPosition*10,screenPosition*10,initialPosition*10 + 10, screenPosition*10 + 10 );
+        if (initialPosition = 0)
+        {
+            if (screenPosition = 0)
+            {
+                do eggGraphic.drawEgg(85 * 32 + 2);
+            }
+            if (screenPosition = 1)
+            {
+                do eggGraphic.drawEgg(90 * 32 + 3);
+            }
+            if (screenPosition = 2)
+            {
+                do eggGraphic.drawEgg(95 * 32 + 4);
+            }
+            if (screenPosition = 3)
+            {
+                do eggGraphic.drawEgg(110 * 32 + 6);
+            }
+            if (screenPosition = 4)
+            {
+                do eggGraphic.drawEgg(120 * 32 + 7);
+            }
+            if (screenPosition = 5)
+            {
+                do eggGraphic.drawEgg(140 * 32 + 8);
+            }
+        }
+        else
+        {
+            do Screen.drawRectangle(initialPosition*10,screenPosition*10,initialPosition*10 + 10, screenPosition*10 + 10 );
+        }
         return;
     }
     method void dispose(){
