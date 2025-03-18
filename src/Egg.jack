@@ -31,18 +31,22 @@ class Egg
             }
             if (screenPosition = 1)
             {
+                do eggGraphic.draw2(86 * 32 + 2);
                 do eggGraphic.drawEgg(92 * 32 + 3);
             }
             if (screenPosition = 2)
             {
+                do eggGraphic.draw2(92 * 32 + 3);
                 do eggGraphic.drawEgg(100 * 32 + 4);
             }
             if (screenPosition = 3)
             {
+                do eggGraphic.draw2(100 * 32 + 4);
                 do eggGraphic.drawEgg(110 * 32 + 6);
             }
             if (screenPosition = 4)
             {
+                do eggGraphic.draw2(110 * 32 + 6);
                 do eggGraphic.drawEgg(120 * 32 + 7);
             }
             if (screenPosition = 5)

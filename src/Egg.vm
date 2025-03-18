@@ -87,6 +87,13 @@ label Egg_4
     eq
     not
     if-goto Egg_7
+    push constant 86
+    push constant 32
+    call Math.multiply 2
+    push constant 2
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
     push constant 92
     push constant 32
     call Math.multiply 2
@@ -102,6 +109,13 @@ label Egg_6
     eq
     not
     if-goto Egg_9
+    push constant 92
+    push constant 32
+    call Math.multiply 2
+    push constant 3
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
     push constant 100
     push constant 32
     call Math.multiply 2
@@ -117,6 +131,13 @@ label Egg_8
     eq
     not
     if-goto Egg_11
+    push constant 100
+    push constant 32
+    call Math.multiply 2
+    push constant 4
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
     push constant 110
     push constant 32
     call Math.multiply 2
@@ -132,6 +153,13 @@ label Egg_10
     eq
     not
     if-goto Egg_13
+    push constant 110
+    push constant 32
+    call Math.multiply 2
+    push constant 6
+    add
+    call eggGraphic.draw2 1
+    pop temp 0
     push constant 120
     push constant 32
     call Math.multiply 2

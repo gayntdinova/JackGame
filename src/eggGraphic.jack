@@ -1,6 +1,6 @@
 class eggGraphic{
     function void drawEgg(int location) {
-        var int memAddress; 
+        var int memAddress;
         let memAddress = 16384+location;
         // column 0
         do Memory.poke(memAddress, 1984);
@@ -19,6 +19,60 @@ class eggGraphic{
         do Memory.poke(memAddress +416, Memory.peek(memAddress+416) + 3612 - (Memory.peek(memAddress+416) & 3612));
         do Memory.poke(memAddress +448, Memory.peek(memAddress+448) + 2040 - (Memory.peek(memAddress+448) & 2040));
         do Memory.poke(memAddress +480, Memory.peek(memAddress+480) + 496 - (Memory.peek(memAddress+480) & 496));
+        return;
+    }
+    function void draw2(int location) {
+        var int memAddress;
+        let memAddress = 16384+location;
+        // column 0
+        do Memory.poke(memAddress, 0);
+        do Memory.poke(memAddress +32, 0);
+        do Memory.poke(memAddress +64, 0);
+        do Memory.poke(memAddress +96, 0);
+        do Memory.poke(memAddress +128, 0);
+        do Memory.poke(memAddress +160, 0);
+        do Memory.poke(memAddress +192, 0);
+        do Memory.poke(memAddress +224, 0);
+        do Memory.poke(memAddress +256, 0);
+        do Memory.poke(memAddress +288, 0);
+        do Memory.poke(memAddress +320, 0);
+        do Memory.poke(memAddress +352, 0);
+        do Memory.poke(memAddress +384, 0);
+        do Memory.poke(memAddress +416, 0);
+        do Memory.poke(memAddress +448, 0);
+        do Memory.poke(memAddress +480, 0);
+        do Screen.setColor(true);
+        do Screen.drawLine(5,100,30,100);
+        do Screen.drawLine(5,99,30,99);
+        do Screen.drawLine(5,98,30,98);
+
+        do Screen.drawLine(30,100,106,130);
+        do Screen.drawLine(30,99,106,129);
+        do Screen.drawLine(30,98,106,128);
+
+        do Screen.drawLine(5,157,30,157);
+        do Screen.drawLine(5,156,30,156);
+        do Screen.drawLine(5,155,30,155);
+
+        do Screen.drawLine(30,157,106,187);
+        do Screen.drawLine(30,156,106,186);
+        do Screen.drawLine(30,155,106,185);
+
+        do Screen.drawLine(507,100,482,100);
+        do Screen.drawLine(507,99,482,99);
+        do Screen.drawLine(507,98,482,98);
+
+        do Screen.drawLine(482,100,406,130);
+        do Screen.drawLine(482,99,406,129);
+        do Screen.drawLine(482,98,406,128);
+
+        do Screen.drawLine(507,157,482,157);
+        do Screen.drawLine(507,156,482,156);
+        do Screen.drawLine(507,155,482,155);
+
+        do Screen.drawLine(482,157,406,187);
+        do Screen.drawLine(482,156,406,186);
+        do Screen.drawLine(482,155,406,185);
         return;
     }
 }
