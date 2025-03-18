@@ -8,4 +8,4 @@
 - 5 - поднять корзину вправо вверх
 
 # Картинки
-<img src="img/game.PNG">  <img src="img/gameover.PNG">
+<img src="img/game.PNG"><img src="img/gameover.PNG">
