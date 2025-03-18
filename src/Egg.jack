@@ -14,13 +14,12 @@ class Egg
         let iterations = iterations + 1;
         if (iterations - ((iterations / 4) * 4) = 0)
         {
-            do Screen.setColor(false);
-            do draw();
+
             let screenPosition = screenPosition + 1;
             do Screen.setColor(true);
             do draw();
         }
-        return screenPosition = 6;
+        return screenPosition = 5;
     }
     method void draw(){
         if (initialPosition = 0)
@@ -51,14 +50,102 @@ class Egg
             }
             if (screenPosition = 5)
             {
-                do eggGraphic.draw2(120 * 32 + 7)
-                do eggGraphic.drawEgg(140 * 32 + 8);
+                do eggGraphic.draw2(120 * 32 + 7);
             }
         }
-        else
+        if (initialPosition = 2)
         {
-            do Screen.drawRectangle(initialPosition*10,screenPosition*10,initialPosition*10 + 10, screenPosition*10 + 10 );
+            if (screenPosition = 0)
+            {
+                do eggGraphic.drawEgg(142 * 32 + 2);
+            }
+            if (screenPosition = 1)
+            {
+                do eggGraphic.draw2(142 * 32 + 2);
+                do eggGraphic.drawEgg(148 * 32 + 3);
+            }
+            if (screenPosition = 2)
+            {
+                do eggGraphic.draw2(148 * 32 + 3);
+                do eggGraphic.drawEgg(156 * 32 + 4);
+            }
+            if (screenPosition = 3)
+            {
+                do eggGraphic.draw2(156 * 32 + 4);
+                do eggGraphic.drawEgg(166 * 32 + 6);
+            }
+            if (screenPosition = 4)
+            {
+                do eggGraphic.draw2(166 * 32 + 6);
+                do eggGraphic.drawEgg(176 * 32 + 7);
+            }
+            if (screenPosition = 5)
+            {
+                do eggGraphic.draw2(176 * 32 + 7);
+            }
         }
+        if (initialPosition = 1)
+        {
+            if (screenPosition = 0)
+            {
+                do eggGraphic.drawEgg(96 * 32 + 28);
+            }
+            if (screenPosition = 1)
+            {
+                do eggGraphic.draw2(96 * 32 + 28);
+                do eggGraphic.drawEgg(102 * 32 + 27);
+            }
+            if (screenPosition = 2)
+            {
+                do eggGraphic.draw2(102 * 32 + 27);
+                do eggGraphic.drawEgg(106 * 32 + 26);
+            }
+            if (screenPosition = 3)
+            {
+                do eggGraphic.draw2(106 * 32 + 26);
+                do eggGraphic.drawEgg(112 * 32 + 25);
+            }
+            if (screenPosition = 4)
+            {
+                do eggGraphic.draw2(112 * 32 + 25);
+                do eggGraphic.drawEgg(120 * 32 + 24);
+            }
+            if (screenPosition = 5)
+            {
+                do eggGraphic.draw2(120 * 32 + 24);
+            }
+        }
+        if (initialPosition = 3)
+        {
+            if (screenPosition = 0)
+            {
+                do eggGraphic.drawEgg(152 * 32 + 28);
+            }
+            if (screenPosition = 1)
+            {
+                do eggGraphic.draw2(152 * 32 + 28);
+                do eggGraphic.drawEgg(158 * 32 + 27);
+            }
+            if (screenPosition = 2)
+            {
+                do eggGraphic.draw2(158 * 32 + 27);
+                do eggGraphic.drawEgg(162 * 32 + 26);
+            }
+            if (screenPosition = 3)
+            {
+                do eggGraphic.draw2(162 * 32 + 26);
+                do eggGraphic.drawEgg(168 * 32 + 25);
+            }
+            if (screenPosition = 4)
+            {
+                do eggGraphic.draw2(168 * 32 + 25);
+                do eggGraphic.drawEgg(176 * 32 + 24);
+            }
+            if (screenPosition = 5)
+            {
+                do eggGraphic.draw2(176 * 32 + 24);
+            }
+        }        
         return;
     }
     method void dispose(){

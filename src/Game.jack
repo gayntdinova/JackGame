@@ -57,7 +57,7 @@ class Game
             //ускоряю игру, если скор стал больше 5, то яйцо спавнится каждые 7 итераций и тд, можно переместить метод в прохождение по яйцам /todo
             if (score > 10){let eggDelay = 13;}
             if (score > 19){let eggDelay = 9;}
-            if (score > 26){let eggDelay = 2;}
+            if (score > 26){let eggDelay = 5;}
 
             if (eggDelayCounter - ((eggDelayCounter/eggDelay)*eggDelay) = 0)
             {

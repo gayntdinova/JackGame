@@ -139,7 +139,7 @@ label Game_12
     gt
     not
     if-goto Game_15
-    push constant 2
+    push constant 5
     pop this 2
     goto Game_14
 label Game_15
