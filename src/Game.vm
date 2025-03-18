@@ -169,6 +169,9 @@ label Game_17
 label Game_16
     goto Game_0
 label Game_1
+    push constant 70
+    call graphicsBack.draw 1
+    pop temp 0
     push constant 0
     return
 function Game.goThrewEggs 4

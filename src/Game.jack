@@ -66,11 +66,11 @@ class Game
             }
             else{let eggDelayCounter = eggDelayCounter + 1;}
         }
-
-        //сделать что нибудь если умерли, там очереди обнулить /todo
-
+        do Screen.clearScreen();
+        do graphicsBack.draw(250);
         return;
     }
+
 
     method void goThrewEggs()
     {
