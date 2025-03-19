@@ -1,5 +1,5 @@
 //отрисовка фона  
-class GraphicsBack 
+class Graphics
 {
 	function void drawBackground()
     {
