@@ -1,4 +1,4 @@
-class  GraphicEgg{
+class  GraphicsOfEgg{
     function void drawEgg(int location) {
         var int memAddress;
         let memAddress = 16384+location;

@@ -27,15 +27,15 @@ class Game
 
         while(true)
         {
-            do Graphics.drawPressAnyButton(32*200+4);
-            
+            do GraphicsOfBackground.drawPressAnyButton(32*200+4);
+
             while (key = 0)
             {
                 let key = Keyboard.keyPressed();
             }
 
             do Screen.clearScreen();
-            do Graphics.drawBackground();
+            do GraphicsOfBackground.drawBackground();
             do drawScore();
             do Chicken.drawRightChicken(32 * 124 + 30);
             do Chicken.drawRightChicken(32 * 67 + 30);
@@ -74,7 +74,7 @@ class Game
             }
             //отрисовка фона при проигрыше
             do clear();
-            do Graphics.drawEndBackground(32*106+13);
+            do GraphicsOfBackground.drawEndBackground(32*106+13);
             do Sys.wait(2000);
         }
         return;

@@ -40,22 +40,22 @@ class Wolf {
     }
 
     method void drawUpLeft() {
-        do GraphicsOfWolf.drawWolfUpLeft(106 * 32 + 6);
+        do GraphicsOfWolf.drawWolfUpLeft();
         return;
     }
 
     method void drawUpRight() {
-        do GraphicsOfWolf.drawWolfUpRight(106 * 32 + 12);
+        do GraphicsOfWolf.drawWolfUpRight();
         return;
     }
 
     method void drawDownLeft() {
-        do GraphicsOfWolf.drawWolfDownLeft(106 * 32 + 6);
+        do GraphicsOfWolf.drawWolfDownLeft();
         return;
     }
 
     method void drawDownRight() {
-        do GraphicsOfWolf.drawWolfDownRight(106 * 32 + 12);
+        do GraphicsOfWolf.drawWolfDownRight();
         return;
     }
 }

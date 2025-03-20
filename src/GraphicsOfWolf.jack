@@ -1,8 +1,8 @@
 //отрисовка волка
 class GraphicsOfWolf{
-function void drawWolfDownRight(int location) {
+function void drawWolfDownRight() {
 	var int memAddress;
-	let memAddress = 16384+location;
+	let memAddress = 16384+(106 * 32) + 12;
 	// column 0
 	// column 1
 	// column 2
@@ -702,9 +702,9 @@ function void drawWolfDownRight(int location) {
 	do Memory.poke(memAddress +3338, 1);
 	return;
 }
-	function void drawWolfDownLeft(int location) {
+	function void drawWolfDownLeft() {
 	var int memAddress;
-	let memAddress = 16384+location;
+	let memAddress = 16384+(106 * 32) + 6;
 	// column 0
 	// column 1
 	// column 2
@@ -1650,9 +1650,9 @@ function void drawWolfDownRight(int location) {
 	return;
 }
 
-function void drawWolfUpLeft(int location) {
+function void drawWolfUpLeft() {
 	var int memAddress;
-	let memAddress = 16384+location;
+	let memAddress = 16384+(106 * 32) + 6;
 	// column 0
 	// column 1
 	// column 2
@@ -2338,9 +2338,9 @@ function void drawWolfUpLeft(int location) {
 	return;
 
 }
-function void drawWolfUpRight(int location) {
+function void drawWolfUpRight() {
 	var int memAddress;
-	let memAddress = 16384+location;
+	let memAddress = 16384+(106 * 32) + 12;
 	// column 0
 	// column 1
 	// column 2

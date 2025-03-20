@@ -27,124 +27,124 @@ class Egg
         {
             if (screenPosition = 0)
             {
-                do GraphicEgg.drawEgg(86 * 32 + 2);
+                do GraphicsOfEgg.drawEgg(86 * 32 + 2);
             }
             if (screenPosition = 1)
             {
-                do GraphicEgg.clearEgg(86 * 32 + 2);
-                do GraphicEgg.drawEgg(92 * 32 + 3);
+                do GraphicsOfEgg.clearEgg(86 * 32 + 2);
+                do GraphicsOfEgg.drawEgg(92 * 32 + 3);
             }
             if (screenPosition = 2)
             {
-                do GraphicEgg.clearEgg(92 * 32 + 3);
-                do GraphicEgg.drawEgg(100 * 32 + 4);
+                do GraphicsOfEgg.clearEgg(92 * 32 + 3);
+                do GraphicsOfEgg.drawEgg(100 * 32 + 4);
             }
             if (screenPosition = 3)
             {
-                do GraphicEgg.clearEgg(100 * 32 + 4);
-                do GraphicEgg.drawEgg(110 * 32 + 6);
+                do GraphicsOfEgg.clearEgg(100 * 32 + 4);
+                do GraphicsOfEgg.drawEgg(110 * 32 + 6);
             }
             if (screenPosition = 4)
             {
-                do GraphicEgg.clearEgg(110 * 32 + 6);
-                do GraphicEgg.drawEgg(120 * 32 + 7);
+                do GraphicsOfEgg.clearEgg(110 * 32 + 6);
+                do GraphicsOfEgg.drawEgg(120 * 32 + 7);
             }
             if (screenPosition = 5)
             {
-                do GraphicEgg.clearEgg(120 * 32 + 7);
+                do GraphicsOfEgg.clearEgg(120 * 32 + 7);
             }
         }
         if (initialPosition = 2)
         {
             if (screenPosition = 0)
             {
-                do GraphicEgg.drawEgg(142 * 32 + 2);
+                do GraphicsOfEgg.drawEgg(142 * 32 + 2);
             }
             if (screenPosition = 1)
             {
-                do GraphicEgg.clearEgg(142 * 32 + 2);
-                do GraphicEgg.drawEgg(148 * 32 + 3);
+                do GraphicsOfEgg.clearEgg(142 * 32 + 2);
+                do GraphicsOfEgg.drawEgg(148 * 32 + 3);
             }
             if (screenPosition = 2)
             {
-                do GraphicEgg.clearEgg(148 * 32 + 3);
-                do GraphicEgg.drawEgg(156 * 32 + 4);
+                do GraphicsOfEgg.clearEgg(148 * 32 + 3);
+                do GraphicsOfEgg.drawEgg(156 * 32 + 4);
             }
             if (screenPosition = 3)
             {
-                do GraphicEgg.clearEgg(156 * 32 + 4);
-                do GraphicEgg.drawEgg(166 * 32 + 6);
+                do GraphicsOfEgg.clearEgg(156 * 32 + 4);
+                do GraphicsOfEgg.drawEgg(166 * 32 + 6);
             }
             if (screenPosition = 4)
             {
-                do GraphicEgg.clearEgg(166 * 32 + 6);
-                do GraphicEgg.drawEgg(176 * 32 + 7);
+                do GraphicsOfEgg.clearEgg(166 * 32 + 6);
+                do GraphicsOfEgg.drawEgg(176 * 32 + 7);
             }
             if (screenPosition = 5)
             {
-                do GraphicEgg.clearEgg(176 * 32 + 7);
+                do GraphicsOfEgg.clearEgg(176 * 32 + 7);
             }
         }
         if (initialPosition = 1)
         {
             if (screenPosition = 0)
             {
-                do GraphicEgg.drawEgg(96 * 32 + 28);
+                do GraphicsOfEgg.drawEgg(96 * 32 + 28);
             }
             if (screenPosition = 1)
             {
-                do GraphicEgg.clearEgg(96 * 32 + 28);
-                do GraphicEgg.drawEgg(102 * 32 + 27);
+                do GraphicsOfEgg.clearEgg(96 * 32 + 28);
+                do GraphicsOfEgg.drawEgg(102 * 32 + 27);
             }
             if (screenPosition = 2)
             {
-                do GraphicEgg.clearEgg(102 * 32 + 27);
-                do GraphicEgg.drawEgg(106 * 32 + 26);
+                do GraphicsOfEgg.clearEgg(102 * 32 + 27);
+                do GraphicsOfEgg.drawEgg(106 * 32 + 26);
             }
             if (screenPosition = 3)
             {
-                do GraphicEgg.clearEgg(106 * 32 + 26);
-                do GraphicEgg.drawEgg(112 * 32 + 25);
+                do GraphicsOfEgg.clearEgg(106 * 32 + 26);
+                do GraphicsOfEgg.drawEgg(112 * 32 + 25);
             }
             if (screenPosition = 4)
             {
-                do GraphicEgg.clearEgg(112 * 32 + 25);
-                do GraphicEgg.drawEgg(120 * 32 + 24);
+                do GraphicsOfEgg.clearEgg(112 * 32 + 25);
+                do GraphicsOfEgg.drawEgg(120 * 32 + 24);
             }
             if (screenPosition = 5)
             {
-                do GraphicEgg.clearEgg(120 * 32 + 24);
+                do GraphicsOfEgg.clearEgg(120 * 32 + 24);
             }
         }
         if (initialPosition = 3)
         {
             if (screenPosition = 0)
             {
-                do GraphicEgg.drawEgg(152 * 32 + 28);
+                do GraphicsOfEgg.drawEgg(152 * 32 + 28);
             }
             if (screenPosition = 1)
             {
-                do GraphicEgg.clearEgg(152 * 32 + 28);
-                do GraphicEgg.drawEgg(158 * 32 + 27);
+                do GraphicsOfEgg.clearEgg(152 * 32 + 28);
+                do GraphicsOfEgg.drawEgg(158 * 32 + 27);
             }
             if (screenPosition = 2)
             {
-                do GraphicEgg.clearEgg(158 * 32 + 27);
-                do GraphicEgg.drawEgg(162 * 32 + 26);
+                do GraphicsOfEgg.clearEgg(158 * 32 + 27);
+                do GraphicsOfEgg.drawEgg(162 * 32 + 26);
             }
             if (screenPosition = 3)
             {
-                do GraphicEgg.clearEgg(162 * 32 + 26);
-                do GraphicEgg.drawEgg(168 * 32 + 25);
+                do GraphicsOfEgg.clearEgg(162 * 32 + 26);
+                do GraphicsOfEgg.drawEgg(168 * 32 + 25);
             }
             if (screenPosition = 4)
             {
-                do GraphicEgg.clearEgg(168 * 32 + 25);
-                do GraphicEgg.drawEgg(176 * 32 + 24);
+                do GraphicsOfEgg.clearEgg(168 * 32 + 25);
+                do GraphicsOfEgg.drawEgg(176 * 32 + 24);
             }
             if (screenPosition = 5)
             {
-                do GraphicEgg.clearEgg(176 * 32 + 24);
+                do GraphicsOfEgg.clearEgg(176 * 32 + 24);
             }
         }
         return;
