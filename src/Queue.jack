@@ -59,6 +59,18 @@ class Queue
         return length;
     }
 
+    method void clear()
+    {
+	    if (~(head = null))
+        {
+		    do head.dispose();
+            let head = null;
+            let tail = null;
+		}
+        let length = 0;
+		return;
+	}
+
     method void dispose()
     {
 	    if (~(head = null))

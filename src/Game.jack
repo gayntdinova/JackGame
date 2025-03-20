@@ -5,18 +5,18 @@ class Game
     field boolean isOver;
     field Random random;
     field Queue eggsGroup;
-    field Array GroupsHeads;
+    field Array groupsHeads;
 
     constructor Game new()
     {
         let wolf = Wolf.new();
         let score = 0;
-        let eggDelay = 15;
+        let eggDelay = 60;
         let eggDelayCounter = eggDelay;
         let isOver = false;
         let random = Random.new();
         let eggsGroup = Queue.new();
-        let GroupsHeads = Array.new(4);
+        let groupsHeads = Array.new(4);
         return this;
     }
 
@@ -25,45 +25,81 @@ class Game
         var char key;
         var int position;
 
-        do Graphics.drawBackground();
-        do drawScore();
-        do Chicken.drawRightChicken(32 * 124 + 30);
-        do Chicken.drawRightChicken(32 * 67 + 30);
-        do Chicken.drawLeftChicken(32 * 124);
-        do Chicken.drawLeftChicken(32 * 67);
-
-        while (~isOver)
+        while(true)
         {
-            let key = Keyboard.keyPressed();
-            if (key = 52){ let position = 0;}
-            if (key = 53){ let position = 1;}
-            if (key = 49){ let position = 2;}
-            if (key = 50){ let position = 3;}
-
-            do wolf.setPosition(position);
-            do wolf.draw();
-
-            do Sys.wait(250);
-
-            //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
-            do goThrewEggs();
-
-            //ускорение игры
-            if (score > 10){let eggDelay = 13;}
-            if (score > 19){let eggDelay = 9;}
-            if (score > 26){let eggDelay = 6;}
-            if (score > 36){let eggDelay = 4;}
-
-            if (eggDelayCounter - ((eggDelayCounter/eggDelay)*eggDelay) = 0)
+            do Graphics.drawPressAnyButton(32*200+4);
+            
+            while (key = 0)
             {
-                let eggDelayCounter = 1;
-                do throwEgg();
+                let key = Keyboard.keyPressed();
             }
-            else{let eggDelayCounter = eggDelayCounter + 1;}
+
+            do Screen.clearScreen();
+            do Graphics.drawBackground();
+            do drawScore();
+            do Chicken.drawRightChicken(32 * 124 + 30);
+            do Chicken.drawRightChicken(32 * 67 + 30);
+            do Chicken.drawLeftChicken(32 * 124);
+            do Chicken.drawLeftChicken(32 * 67);
+
+            while (~isOver)
+            {
+                let key = Keyboard.keyPressed();
+                if (key = 52){ let position = 0;}
+                if (key = 53){ let position = 1;}
+                if (key = 49){ let position = 2;}
+                if (key = 50){ let position = 3;}
+
+                do wolf.setPosition(position);
+                do wolf.draw();
+
+                do Sys.wait(50);
+
+                //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
+                do goThrewEggs();
+
+                //ускорение игры
+                if (score > 11){let eggDelay = 60;}
+                if (score > 18){let eggDelay = 40;}
+                if (score > 26){let eggDelay = 30;}
+                if (score > 36){let eggDelay = 22;}
+                if (score > 50){let eggDelay = 17;}
+
+                if (eggDelayCounter - ((eggDelayCounter/eggDelay)*eggDelay) = 0)
+                {
+                    let eggDelayCounter = 1;
+                    do throwEgg();
+                }
+                else{let eggDelayCounter = eggDelayCounter + 1;}
+            }
+            //отрисовка фона при проигрыше
+            do clear();
+            do Graphics.drawEndBackground(32*106+13);
+            do Sys.wait(2000);
         }
-        //отрисовка фона при проигрыше
+        return;
+    }
+
+    method void clear()
+    {
+        var int i;
+        var Egg head;
+
         do Screen.clearScreen();
-        do Graphics.drawEndBackground(32*106+13);
+        let score = 0;
+        let eggDelay = 60;
+        let eggDelayCounter = eggDelay;
+        let isOver = false;
+        do eggsGroup.clear();
+
+        let i = 0;
+        while (~(i = 4))
+        {
+            let head = groupsHeads[i];
+            do head.dispose();
+            let groupsHeads[i] = null;
+            let i = i + 1;
+        }
         return;
     }
 
@@ -123,14 +159,14 @@ class Game
         var Egg newEgg;
         var Egg tailEgg;
 
-        let tailEgg = GroupsHeads[groupNumber];
+        let tailEgg = groupsHeads[groupNumber];
 
         if (~(tailEgg = null))
         {
             if(tailEgg.getStage() = 0){return false;}
         }
         let newEgg = Egg.new(groupNumber);
-        let GroupsHeads[groupNumber] = newEgg;
+        let groupsHeads[groupNumber] = newEgg;
         do eggsGroup.enqueue(newEgg);
 
         return true;
@@ -139,21 +175,21 @@ class Game
     method void drawScore()
     {
         var int counter;
-        var int ost;
-        var int pos;
+        var int remainder;
+        var int position;
 
-        let pos = 250;
+        let position = 250;
         let counter = score;
         do Screen.setColor(false);
-        do Screen.drawRectangle(pos-30, 10, pos+10, 19);
+        do Screen.drawRectangle(position - 30, 10, position + 10, 19);
         do Screen.setColor(true);
-        if(counter = 0){do drawNumber(0, pos);}
+        if(counter = 0){do drawNumber(0, position);}
         while(~(counter = 0))
         {
-            let ost = counter - ((counter / 10)*10);
-            do drawNumber(ost, pos);
+            let remainder = counter - ((counter / 10)*10);
+            do drawNumber(remainder, position);
             let counter = counter / 10;
-            let pos = pos - 10;
+            let position = position - 10;
         }
         return;
     }
@@ -252,6 +288,8 @@ class Game
     {
         do wolf.dispose();
         do eggsGroup.dispose();
+        do random.dispose();
+        do groupsHeads.dispose();
 
         do Memory.deAlloc(this);
 		return;

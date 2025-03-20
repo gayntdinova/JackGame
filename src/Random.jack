@@ -15,4 +15,9 @@ class Random
         let generalValue = next - ((next / upperLimit) * upperLimit);
         return generalValue - ((generalValue / 4) * 4);
     }
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
 }

@@ -12,7 +12,7 @@ class Egg
     }
     method boolean changeScreenPosition(){
         let iterations = iterations + 1;
-        if (iterations - ((iterations / 4) * 4) = 0)
+        if (iterations - ((iterations / 16) * 16) = 0)
         {
 
             let screenPosition = screenPosition + 1;
@@ -150,6 +150,7 @@ class Egg
         return;
     }
     method void dispose(){
+        do Memory.deAlloc(this);
         return;
     }
     //возвращает позицию откуда падает(их 4)

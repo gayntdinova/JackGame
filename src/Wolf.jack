@@ -3,7 +3,6 @@ class Wolf {
 
     constructor Wolf new() {
         let position = 1;
-        do draw();
         return this;
     }
 
