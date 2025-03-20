@@ -25,7 +25,7 @@ class Game
         var char key;
         var int position;
 
-        do GraphicsBack.drawBackground();
+        do Graphics.drawBackground();
         do drawScore();
         do Chicken.drawRightChicken(32 * 124 + 30);
         do Chicken.drawRightChicken(32 * 67 + 30);
@@ -63,7 +63,7 @@ class Game
         }
         //отрисовка фона при проигрыше
         do Screen.clearScreen();
-        do GraphicsBack.drawEndBackground(32*106+13);
+        do Graphics.drawEndBackground(32*106+13);
         return;
     }
 
