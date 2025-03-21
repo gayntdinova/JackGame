@@ -64,6 +64,7 @@ class Game
                 if (score > 26){let eggDelay = 30;}
                 if (score > 36){let eggDelay = 22;}
                 if (score > 50){let eggDelay = 17;}
+                if (score > 70){let eggDelay = 14;}
 
                 if (eggDelayCounter - ((eggDelayCounter/eggDelay)*eggDelay) = 0)
                 {
