@@ -77,7 +77,7 @@ class Game
             }
             //отрисовка фона при проигрыше
             do clear();
-            do GraphicsOfBackground.drawEndBackground(32*106+13);
+            do GraphicsOfBackground.drawEndBackground(32*100+13);
             do Sys.wait(2000);
         }
         return;
