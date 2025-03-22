@@ -27,7 +27,7 @@ class Game
 
         while(true)
         {
-            do GraphicsOfBackground.drawPressAnyButton(32*200+4);
+            do GraphicsOfBackground.drawPressAnyButton(32*150+3);
 
             while (key = 0)
             {
@@ -99,7 +99,6 @@ class Game
         while (~(i = 4))
         {
             let head = groupsHeads[i];
-            do head.dispose();
             let groupsHeads[i] = null;
             let i = i + 1;
         }
