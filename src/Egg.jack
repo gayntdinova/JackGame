@@ -10,7 +10,7 @@ class Egg
         do draw();
         return this;
     }
-    method boolean changeScreenPosition(){
+    method void changeScreenPosition(){
         let iterations = iterations + 1;
         if (iterations - ((iterations / 16) * 16) = 0)
         {
@@ -19,7 +19,7 @@ class Egg
             do Screen.setColor(true);
             do draw();
         }
-        return screenPosition = 5;
+        return;
     }
     //отрисовка яиц на экране во время падения
     method void draw(){

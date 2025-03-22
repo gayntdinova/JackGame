@@ -55,8 +55,10 @@ class Game
 
                 do Sys.wait(50);
 
-                //проходится по группам яиц,двигая их и проверяя не упали ли какие либо яйца
-                do goThrewEggs();
+                //проходится по группе яиц,двигая их
+                do moveEggs();
+                //проверяем не упало ли последнее яйцо
+                do checkFalledEgg();
 
                 //ускорение игры
                 if (score > 11){let eggDelay = 60;}
@@ -80,7 +82,7 @@ class Game
         }
         return;
     }
-
+    //чистит всё что надо перед повторным запуском
     method void clear()
     {
         var int i;
@@ -103,59 +105,70 @@ class Game
         }
         return;
     }
-
-    method void goThrewEggs()
+    //прибаляет счётчик яйцам, раз в сколько то таких вызовов преходит в следующую позицию
+    method void moveEggs()
     {
         var QueueItem item;
-        var boolean fell,label;
         var Egg egg;
 
-        let label = false;
         let item = eggsGroup.getHead();
 
         while (~(item = null))
         {
             let egg = item.getEgg();
-            let fell = egg.changeScreenPosition();
-            if (fell){let label = true;}
+            do egg.changeScreenPosition();
             let item = item.getNext();
-        }
-
-        if (label)
-        {
-            let egg = eggsGroup.dequeue();
-            if (~(wolf.getPosition() = egg.getPosition())){let isOver = true;}
-            else
-            {
-                let score = score + 1;
-                do drawScore();
-            }
-            do Screen.setColor(false);
-            do egg.draw();
-            do egg.dispose();
         }
         return;
     }
+    //проверяет не упало ли яйцо, если упало, то удаляет из очереди и либо заканчивает игру, либо прибаляет скор
+    method void checkFalledEgg()
+    {
+        var QueueItem head;
+        var Egg egg;
 
+        let head = eggsGroup.getHead();
+
+        if (~(head = null))
+        {
+            let egg = head.getEgg();
+
+            if (egg.getStage() = 5)
+            {
+                do eggsGroup.dequeue();
+                if (~(wolf.getPosition() = egg.getPosition())){let isOver = true;}
+                else
+                {
+                    let score = score + 1;
+                    do drawScore();
+                }
+                do Screen.setColor(false);
+                do egg.draw();
+                do egg.dispose();
+            }
+        }
+        return;
+    }
+    //бросает яйцо в рандомную точку
     method void throwEgg()
     {
         var int groupNumber;
-        var boolean label;
+        var boolean throwed;
 
         let groupNumber = random.rand();
 
-        let label = false;
+        let throwed = false;
 
         //идём по всем местам, для спавная яиц от рандомного пока не находим где нет в начале яйца, далее кидаем туда яйцо
-        while (~label)
+        while (~throwed)
         {
-            let label = tryPush(groupNumber);
+            let throwed = tryPush(groupNumber);
             let groupNumber = groupNumber + 1 - (((groupNumber + 1) / 4) * 4);
         }
         return;
     }
-
-    method boolean tryPush(int groupNumber)//если не может кинуть в выбранное место яйцо, возвращает false иначе true и кидает его
+    //если не может кинуть в выбранное место яйцо, возвращает false иначе true и кидает его
+    method boolean tryPush(int groupNumber)
     {
         var Egg newEgg;
         var Egg tailEgg;

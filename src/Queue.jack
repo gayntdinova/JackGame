@@ -54,6 +54,11 @@ class Queue
         return head;
     }
 
+    method QueueItem getTail()
+    {
+        return tail;
+    }
+
     method QueueItem length()
     {
         return length;
