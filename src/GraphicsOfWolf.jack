@@ -1,5 +1,11 @@
 //отрисовка волка
 class GraphicsOfWolf{
+function void prepareScreenForDrawing(){
+	do Screen.setColor(false);
+    do Screen.drawRectangle(127, 100, 380, 255);
+    do Screen.setColor(true);
+	return;
+}
 function void drawWolfDownRight() {
 	var int memAddress;
 	let memAddress = 16384+(106 * 32) + 12;

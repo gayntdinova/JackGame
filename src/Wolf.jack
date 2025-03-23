@@ -16,46 +16,24 @@ class Wolf {
     }
 
     method void draw() {
-		do Screen.setColor(false);
-        do Screen.drawRectangle(127, 100, 380, 255);
-        do Screen.setColor(true);
+		do GraphicsOfWolf.prepareScreenForDrawing();
         if (position = 0) {
-            do drawUpLeft();
+            do GraphicsOfWolf.drawWolfUpLeft();
         }
         if (position = 1) {
-            do drawUpRight();
+            do GraphicsOfWolf.drawWolfUpRight();
         }
         if (position = 2) {
-            do drawDownLeft();
+            do GraphicsOfWolf.drawWolfDownLeft();
         }
         if (position = 3) {
-            do drawDownRight();
+            do GraphicsOfWolf.drawWolfDownRight();
         }
         return;
     }
 
     method void dispose() {
         do Memory.deAlloc(this);
-        return;
-    }
-
-    method void drawUpLeft() {
-        do GraphicsOfWolf.drawWolfUpLeft();
-        return;
-    }
-
-    method void drawUpRight() {
-        do GraphicsOfWolf.drawWolfUpRight();
-        return;
-    }
-
-    method void drawDownLeft() {
-        do GraphicsOfWolf.drawWolfDownLeft();
-        return;
-    }
-
-    method void drawDownRight() {
-        do GraphicsOfWolf.drawWolfDownRight();
         return;
     }
 }
