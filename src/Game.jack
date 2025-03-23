@@ -22,8 +22,11 @@ class Game
 
     method void run()
     {
-        var char key;
+        var char key, previousKey;
         var int position;
+
+        // значение, которое нельзя получить из Keyboard.keyPressed()
+        let previousKey = 300; 
 
         while(true)
         {
@@ -50,12 +53,16 @@ class Game
                 if (key = 49){ let position = 2;}
                 if (key = 50){ let position = 3;}
 
-                do wolf.setPosition(position);
-                do wolf.draw();
+                if (~(previousKey = key)){
+                    do wolf.setPosition(position);
+                    do wolf.draw();
+                }
+
+                let previousKey=key;
 
                 do Sys.wait(50);
 
-                //проходится по группе яиц,двигая их
+                //проходится по группе яиц, двигая их
                 do moveEggs();
                 //проверяем не упало ли последнее яйцо
                 do checkFalledEgg();
