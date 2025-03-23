@@ -53,12 +53,14 @@ class Game
                 if (key = 49){ let position = 2;}
                 if (key = 50){ let position = 3;}
 
-                if (~(previousKey = key)){
-                    do wolf.setPosition(position);
-                    do wolf.draw();
+                // первая отрисовка в любом случае должна быть, если не нажата игнорируем
+                if ((~(key = 0)) | (previousKey = 300)){
+                    if (~(previousKey = key)){
+                        do wolf.setPosition(position);
+                        do wolf.draw();
+                    }
+                    let previousKey=key;
                 }
-
-                let previousKey=key;
 
                 do Sys.wait(50);
 
